@@ -1,0 +1,1 @@
+console.log("Yiang Website V1.0 Loaded");{\rtf1}
