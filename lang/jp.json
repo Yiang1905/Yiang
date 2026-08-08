@@ -1,0 +1,63 @@
+{
+  "nav_home": "ホーム",
+  "nav_vision": "ビジョン",
+  "nav_projects": "プロジェクト",
+  "nav_technology": "テクノロジー",
+  "nav_partners": "パートナー",
+  "nav_investor": "投資家向け",
+  "nav_contact": "お問い合わせ",
+
+  "hero_title": "アイデアを未来のテクノロジーへ",
+
+  "hero_description": "YiangはAI、ヘルスケア、人間体験を融合した革新的な技術ソリューションを創造しています。",
+
+  "hero_button_project": "プロジェクトを見る",
+
+  "hero_button_partner": "協業する",
+
+
+  "vision_title": "私たちのビジョン",
+
+  "vision_subtitle": "未来のための意味あるテクノロジーを創造する。",
+
+  "vision_heading": "Yiang Creative Technology Studio",
+
+  "vision_text_1": "Yiangは人工知能、ヘルスケア、人間の生活をつなぐ革新的な技術コンセプトを開発しています。",
+
+  "vision_text_2": "未来の技術は強力であるだけでなく、人間中心であるべきだと考えています。",
+
+
+  "projects_title": "主要プロジェクト",
+
+  "projects_subtitle": "テクノロジーで未来を探索する。",
+
+
+  "neurosleep_title": "NeuroSleep Technology",
+
+  "neurosleep_description": "スマートハードウェア、健康モニタリング、個別ケアを融合したAI睡眠システム。",
+
+
+  "ai_title": "AI WorkStation",
+
+  "ai_description": "創造性と自動化を向上させる次世代AI生産システム。",
+
+
+  "future_title": "未来イノベーション",
+
+  "future_description": "未来を形作る新しい技術を探求します。",
+
+
+  "technology_title": "テクノロジー理念",
+
+  "technology_subtitle": "AIと人間のニーズを融合する。",
+
+
+  "partners_title": "グローバルパートナーシップ",
+
+  "partners_subtitle": "国境を越えたイノベーション。",
+
+
+  "investor_title": "投資家向け情報",
+
+  "contact_title": "お問い合わせ"
+}

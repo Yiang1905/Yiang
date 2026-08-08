@@ -1,0 +1,95 @@
+{
+  "nav_home": "首页",
+  "nav_vision": "愿景",
+  "nav_projects": "项目",
+  "nav_technology": "技术理念",
+  "nav_partners": "合作伙伴",
+  "nav_investor": "投资中心",
+  "nav_contact": "联系我们",
+
+  "hero_title": "将创意转化为未来科技",
+
+  "hero_description": "Yiang 专注于人工智能、医疗健康与未来科技交汇领域的创新解决方案。",
+
+  "hero_button_project": "探索项目",
+
+  "hero_button_partner": "合作洽谈",
+
+
+  "vision_title": "我们的愿景",
+
+  "vision_subtitle": "创造面向未来的有意义科技。",
+
+  "vision_heading": "Yiang 创意科技工作室",
+
+  "vision_text_1": "Yiang 致力于发现、设计和开发连接人工智能、健康科技与人类生活的创新技术概念。",
+
+  "vision_text_2": "我们相信未来科技不仅需要强大，更应该具有人性化价值。",
+
+
+  "projects_title": "核心项目",
+
+  "projects_subtitle": "通过科技探索未来。",
+
+
+  "neurosleep_title": "NeuroSleep 智能睡眠系统",
+
+  "neurosleep_description": "结合智能硬件、健康监测和个性化服务的新一代AI睡眠解决方案。",
+
+
+  "ai_title": "AI WorkStation",
+
+  "ai_description": "提升创造力、自动化能力和数字生产效率的个人AI系统。",
+
+
+  "future_title": "未来创新",
+
+  "future_description": "探索塑造未来的新兴科技方向。",
+
+
+  "technology_title": "技术理念",
+
+  "technology_subtitle": "让人工智能服务于人类需求。",
+
+
+  "healthcare_title": "AI医疗与未来系统",
+
+  "healthcare_description": "Yiang探索利用人工智能改善人类体验的新一代技术方案。",
+
+
+  "partners_title": "全球合作",
+
+  "partners_subtitle": "科技无国界。",
+
+
+  "partner_heading": "连接未来合作",
+
+  "partner_description": "Yiang欢迎科技企业、投资机构、研究组织及全球合作伙伴参与创新。",
+
+
+  "investor_title": "投资中心",
+
+  "investor_subtitle": "探索Yiang商业合作机会。",
+
+
+  "investor_heading": "战略合作机会",
+
+  "investor_description": "Yiang正在开发具有全球市场潜力的创新科技项目。",
+
+
+  "company_profile": "公司介绍",
+
+  "business_proposal": "商业计划书",
+
+  "investor_deck": "投资展示",
+
+  "partnership": "合作机会",
+
+
+  "contact_title": "联系我们",
+
+  "contact_subtitle": "共同创造未来。",
+
+
+  "footer": "© 2026 Yiang Creative Technology Studio 版权所有。"
+}

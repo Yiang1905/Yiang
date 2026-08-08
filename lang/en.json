@@ -1,0 +1,101 @@
+{
+  "nav_home": "Home",
+  "nav_vision": "Vision",
+  "nav_projects": "Projects",
+  "nav_technology": "Technology",
+  "nav_partners": "Partners",
+  "nav_investor": "Investor",
+  "nav_contact": "Contact",
+
+  "hero_title": "Building Ideas Into Future Technologies",
+
+  "hero_description": "Yiang creates innovative solutions at the intersection of AI, healthcare and human experience.",
+
+  "hero_button_project": "Explore Projects",
+
+  "hero_button_partner": "Partner With Us",
+
+
+  "vision_title": "Our Vision",
+
+  "vision_subtitle": "Building meaningful technology for the future.",
+
+  "vision_heading": "Yiang Creative Technology Studio",
+
+  "vision_text_1": "Yiang focuses on discovering, designing and developing innovative technology concepts that connect artificial intelligence, healthcare and human life.",
+
+  "vision_text_2": "We believe future technologies should not only be powerful, but also meaningful and human-centered.",
+
+
+
+  "projects_title": "Featured Projects",
+
+  "projects_subtitle": "Exploring the future through technology.",
+
+
+  "neurosleep_title": "NeuroSleep Technology",
+
+  "neurosleep_description": "AI Intelligent Sleep System combining smart hardware, health monitoring and personalized care.",
+
+
+  "ai_title": "AI WorkStation",
+
+  "ai_description": "An autonomous AI productivity system designed to enhance creativity, automation and digital workflows.",
+
+
+  "future_title": "Future Innovation",
+
+  "future_description": "Exploring emerging technologies that shape tomorrow.",
+
+
+
+  "technology_title": "Technology Philosophy",
+
+  "technology_subtitle": "Where artificial intelligence meets human needs.",
+
+
+  "healthcare_title": "AI Healthcare & Future Systems",
+
+  "healthcare_description": "Yiang explores next-generation technology concepts that improve human experiences through artificial intelligence and intelligent systems.",
+
+
+
+  "partners_title": "Global Partnership",
+
+  "partners_subtitle": "Innovation without borders.",
+
+
+  "partner_heading": "Building Future Connections",
+
+  "partner_description": "Yiang welcomes cooperation with technology companies, investors, research organizations and global partners.",
+
+
+
+  "investor_title": "Investor Center",
+
+  "investor_subtitle": "Explore Yiang business opportunities.",
+
+
+  "investor_heading": "Strategic Partnership Opportunities",
+
+  "investor_description": "Yiang is developing innovative technology projects with global market potential.",
+
+
+
+  "company_profile": "Company Profile",
+
+  "business_proposal": "Business Proposal",
+
+  "investor_deck": "Investor Presentation",
+
+  "partnership": "Partnership Opportunity",
+
+
+
+  "contact_title": "Contact",
+
+  "contact_subtitle": "Let's build the future together.",
+
+
+  "footer": "© 2026 Yiang Creative Technology Studio. All Rights Reserved."
+}
