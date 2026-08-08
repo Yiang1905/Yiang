@@ -1,123 +1,82 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
 }
 
 
 html{
-    scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
+
 
 
 body{
 
-    font-family:
-    "Microsoft YaHei",
-    Arial,
-    sans-serif;
+font-family:
+"Segoe UI",
+Arial,
+sans-serif;
 
-    background:
-    linear-gradient(
-    135deg,
-    #020617,
-    #0f2742
-    );
+background:
+#05070d;
 
-    color:white;
+color:white;
 
-    line-height:1.8;
+line-height:1.6;
 
 }
 
 
 
-
-/* =================
-Header
-================= */
+/* HEADER */
 
 
 header{
 
-    position:fixed;
+position:fixed;
 
-    top:0;
+top:0;
 
-    width:100%;
+width:100%;
 
-    z-index:1000;
+height:80px;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
-    padding:20px 8%;
+padding:0 8%;
 
+background:
+rgba(5,7,13,0.75);
 
-    background:
+backdrop-filter:blur(15px);
 
-    rgba(2,6,23,.75);
+z-index:1000;
 
-
-    backdrop-filter:blur(15px);
-
-}
-
-
-
-.logo-area{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
+border-bottom:
+1px solid rgba(255,255,255,.08);
 
 }
+
 
 
 .logo{
 
-    width:70px;
+font-size:32px;
 
-    height:70px;
+font-weight:800;
 
-    object-fit:contain;
+letter-spacing:8px;
 
-}
-
-
-.brand{
-
-    font-size:32px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-
-}
-
-
-.tagline{
-
-    font-size:12px;
-
-    color:#94a3b8;
-
-}
-
-
-
-
-
-nav{
-
-    display:flex;
-
-    gap:35px;
+color:white;
 
 }
 
@@ -125,48 +84,62 @@ nav{
 
 nav a{
 
-    color:white;
+color:#ddd;
 
-    text-decoration:none;
+text-decoration:none;
 
-    transition:.3s;
+margin-left:35px;
+
+font-size:15px;
+
+transition:.3s;
 
 }
-
 
 
 nav a:hover{
 
-    color:#38bdf8;
+color:#00d9ff;
 
 }
 
 
 
 
-
-
-
-/* =================
-Hero
-================= */
+/* HERO */
 
 
 .hero{
 
-    min-height:100vh;
+min-height:100vh;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+align-items:center;
 
-    justify-content:center;
+justify-content:space-between;
 
-    align-items:center;
+padding:
+120px 8% 80px;
 
-    text-align:center;
+overflow:hidden;
 
-    padding:120px 20px;
+background:
+
+radial-gradient(
+circle at top right,
+rgba(0,217,255,.18),
+transparent 40%
+);
+
+
+}
+
+
+
+.hero-content{
+
+max-width:650px;
 
 }
 
@@ -174,23 +147,23 @@ Hero
 
 .hero h1{
 
-    font-size:70px;
+font-size:70px;
 
-    line-height:1.3;
+line-height:1.1;
 
+margin-bottom:30px;
 
-    background:
+background:
 
-    linear-gradient(
-    90deg,
-    #38bdf8,
-    #818cf8
-    );
+linear-gradient(
+90deg,
+#ffffff,
+#00d9ff
+);
 
+-webkit-background-clip:text;
 
-    -webkit-background-clip:text;
-
-    color:transparent;
+color:transparent;
 
 }
 
@@ -198,71 +171,54 @@ Hero
 
 .hero p{
 
-    margin-top:35px;
+font-size:20px;
 
-    max-width:900px;
+color:#b8c1d1;
 
-    font-size:22px;
-
-    color:#cbd5e1;
+margin-bottom:40px;
 
 }
 
 
 
-.button{
+.buttons{
 
-    margin-top:45px;
+display:flex;
 
-    padding:15px 45px;
-
-    border-radius:50px;
-
-    background:#38bdf8;
-
-    color:#020617;
-
-    text-decoration:none;
-
-    font-weight:bold;
+gap:20px;
 
 }
 
 
 
+.btn{
 
+padding:
 
+14px 35px;
 
-/* =================
-Section
-================= */
+border-radius:40px;
 
+background:#00d9ff;
 
-.section{
+color:black;
 
-    padding:100px 8%;
+font-weight:700;
 
-    text-align:center;
-
-}
-
-
-
-.section h2{
-
-    font-size:44px;
-
-    margin-bottom:35px;
+text-decoration:none;
 
 }
 
 
 
-.subtitle{
+.btn.outline{
 
-    color:#94a3b8;
+background:transparent;
 
-    margin-bottom:40px;
+border:
+1px solid #00d9ff;
+
+color:white;
 
 }
 
@@ -270,36 +226,92 @@ Section
 
 
 
-
-.content-box{
-
-    max-width:900px;
-
-    margin:auto;
-
-    padding:40px;
-
-    border-radius:25px;
+/* AI CIRCLE */
 
 
-    background:
+.hero-animation{
 
-    rgba(255,255,255,.08);
+width:350px;
 
+height:350px;
 
-    border:
+display:flex;
 
-    1px solid rgba(255,255,255,.12);
+align-items:center;
+
+justify-content:center;
 
 }
 
 
 
-.content-box p{
+.ai-circle{
 
-    margin-bottom:20px;
 
-    color:#dbeafe;
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+font-size:70px;
+
+font-weight:800;
+
+
+color:#00d9ff;
+
+
+border:
+
+2px solid #00d9ff;
+
+
+box-shadow:
+
+0 0 80px rgba(0,217,255,.6);
+
+
+animation:
+
+pulse 3s infinite;
+
+
+}
+
+
+
+@keyframes pulse{
+
+
+0%{
+
+transform:scale(1);
+
+}
+
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+}
+
 
 }
 
@@ -307,48 +319,85 @@ Section
 
 
 
+/* SECTION */
 
 
-/* =================
-Cards
-================= */
+section{
+
+padding:
+
+100px 8%;
+
+}
+
+
+
+h2{
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:60px;
+
+
+background:
+
+linear-gradient(
+90deg,
+white,
+#00d9ff
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+
+}
+
+
+
+
+
+/* CARDS */
 
 
 .cards{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
+grid-template-columns:
 
-    repeat(3,1fr);
+repeat(3,1fr);
 
-    gap:30px;
+gap:30px;
 
-    margin-top:50px;
 
 }
-
 
 
 
 .card{
 
-    padding:40px 30px;
 
-    border-radius:25px;
+background:
 
-
-    background:
-
-    rgba(255,255,255,.08);
+rgba(255,255,255,.05);
 
 
-    border:
+border:
 
-    1px solid rgba(255,255,255,.12);
+1px solid rgba(255,255,255,.1);
 
 
-    transition:.35s;
+padding:35px;
+
+
+border-radius:20px;
+
+
+transition:.3s;
 
 
 }
@@ -357,29 +406,25 @@ Cards
 
 .card:hover{
 
-    transform:translateY(-10px);
 
-    background:
+transform:translateY(-10px);
 
-    rgba(56,189,248,.15);
+
+border-color:#00d9ff;
+
 
 }
+
 
 
 
 .card h3{
 
-    font-size:28px;
 
-    margin-bottom:20px;
+font-size:25px;
 
-}
+margin-bottom:15px;
 
-
-
-.card p{
-
-    color:#cbd5e1;
 
 }
 
@@ -387,17 +432,97 @@ Cards
 
 
 
-.card a{
+/* PROJECTS */
 
-    display:inline-block;
 
-    margin-top:20px;
+.project-grid{
 
-    color:#38bdf8;
 
-    text-decoration:none;
+display:grid;
 
-    font-weight:bold;
+grid-template-columns:
+
+repeat(3,1fr);
+
+
+gap:30px;
+
+
+}
+
+
+
+.project{
+
+
+height:250px;
+
+
+padding:35px;
+
+
+border-radius:25px;
+
+
+background:
+
+linear-gradient(
+145deg,
+#111827,
+#05070d
+);
+
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+
+transition:.3s;
+
+
+}
+
+
+.project:hover{
+
+
+transform:translateY(-12px);
+
+
+box-shadow:
+
+0 0 40px rgba(0,217,255,.2);
+
+
+}
+
+
+
+.project span{
+
+
+display:inline-block;
+
+
+margin-top:20px;
+
+
+padding:
+
+6px 15px;
+
+
+border-radius:20px;
+
+
+border:
+
+1px solid #00d9ff;
+
+
+color:#00d9ff;
+
 
 }
 
@@ -405,11 +530,39 @@ Cards
 
 
 
-.project-card{
+/* BUSINESS */
 
-    text-decoration:none;
 
-    color:white;
+.business-box{
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+
+gap:25px;
+
+
+}
+
+
+
+.business-box div{
+
+
+background:
+
+rgba(255,255,255,.05);
+
+
+padding:30px;
+
+
+border-radius:20px;
+
 
 }
 
@@ -417,13 +570,41 @@ Cards
 
 
 
-.project-card span{
+/* INVESTOR */
 
-    display:block;
 
-    margin-top:25px;
+.investor{
 
-    color:#38bdf8;
+
+max-width:800px;
+
+
+margin:auto;
+
+
+padding:50px;
+
+
+background:
+
+rgba(0,217,255,.08);
+
+
+border-radius:25px;
+
+
+border:
+
+1px solid rgba(0,217,255,.3);
+
+
+}
+
+
+
+.investor li{
+
+margin:15px;
 
 }
 
@@ -431,57 +612,43 @@ Cards
 
 
 
-/* =================
-Business Model
-================= */
+/* PPT */
 
 
-.process{
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(4,1fr);
-
-    gap:25px;
-
-    margin-top:50px;
-
-}
+.ppt-box{
 
 
-
-.process-item{
-
-    padding:35px 20px;
-
-    border-radius:20px;
+height:300px;
 
 
-    background:
-
-    rgba(255,255,255,.08);
-
-}
+display:flex;
 
 
-
-.process-item h3{
-
-    font-size:40px;
-
-    color:#38bdf8;
-
-}
+flex-direction:column;
 
 
+justify-content:center;
 
-.process-item h4{
 
-    font-size:22px;
+align-items:center;
 
-    margin:15px 0;
+
+background:
+
+linear-gradient(
+135deg,
+#111827,
+#020617
+);
+
+
+border-radius:25px;
+
+
+border:
+
+1px dashed #00d9ff;
+
 
 }
 
@@ -489,123 +656,35 @@ Business Model
 
 
 
-
-/* =================
-Partner
-================= */
+/* CONTACT */
 
 
-.partner-list{
+#contact{
 
-    display:flex;
 
-    justify-content:center;
+text-align:center;
 
-    flex-wrap:wrap;
-
-    gap:20px;
 
 }
 
 
 
-.partner-list span{
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-
-/* =================
-Contact
-================= */
-
-
-.contact-box{
-
-    max-width:600px;
-
-    margin:auto;
-
-    padding:45px;
-
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    border-radius:25px;
-
-}
-
-
-
-.contact-box h3{
-
-    font-size:32px;
-
-}
-
-
-
-.contact a{
-
-    color:#38bdf8;
-
-    text-decoration:none;
-
-}
-
-
-
-
-
-
-/* =================
-Footer
-================= */
 
 
 footer{
 
-    text-align:center;
 
-    padding:60px 20px;
-
-
-    background:
-
-    rgba(0,0,0,.35);
+padding:30px;
 
 
-    color:#94a3b8;
-
-}
+text-align:center;
 
 
+background:#020409;
 
-footer img{
 
-    width:90px;
+color:#888;
 
-    margin-bottom:20px;
 
 }
 
@@ -613,45 +692,20 @@ footer img{
 
 
 
+/* MOBILE */
 
 
-/* =================
-Mobile
-================= */
+@media(max-width:900px){
 
 
-@media(max-width:768px){
+.hero{
 
 
-header{
-
-    padding:15px 20px;
-
-}
+flex-direction:column;
 
 
+text-align:center;
 
-nav{
-
-    display:none;
-
-}
-
-
-
-.logo{
-
-    width:55px;
-
-    height:55px;
-
-}
-
-
-
-.brand{
-
-    font-size:25px;
 
 }
 
@@ -659,41 +713,43 @@ nav{
 
 .hero h1{
 
-    font-size:42px;
+font-size:45px;
 
 }
 
 
 
-.hero p{
+.cards,
+.project-grid,
+.business-box{
 
-    font-size:18px;
+
+grid-template-columns:
+
+1fr;
+
 
 }
 
 
 
-.cards{
+nav{
 
-    grid-template-columns:1fr;
+
+display:none;
+
 
 }
 
 
+.hero-animation{
 
-.process{
 
-    grid-template-columns:1fr;
+margin-top:50px;
+
 
 }
 
-
-
-.section h2{
-
-    font-size:34px;
-
-}
 
 
 }
