@@ -1,152 +1,12 @@
-/*
-=====================================
-Yiang V2.0
-Creative Technology Studio
-
-script.js
-=====================================
-*/
-
-
-// ===============================
-// LANGUAGE SYSTEM
-// ===============================
-
-
-let currentLanguage = "en";
-
-
-const languageButton =
-document.getElementById("language-btn");
-
-
-const languageButtons =
-document.querySelectorAll(
-".language-menu button"
-);
-
-
-
-
-
-async function loadLanguage(lang){
-
-
-    try{
-
-
-        const response =
-        await fetch(`lang/${lang}.json`);
-
-
-        const data =
-        await response.json();
-
-
-
-        document
-        .querySelectorAll("[data-i18n]")
-        .forEach(element=>{
-
-
-            const key =
-            element.getAttribute("data-i18n");
-
-
-
-            if(data[key]){
-
-                element.innerHTML =
-                data[key];
-
-            }
-
-
-        });
-
-
-
-        currentLanguage = lang;
-
-
-        updateLanguageButton(lang);
-
-
-
-    }
-
-    catch(error){
-
-        console.log(
-        "Language loading error:",
-        error
-        );
-
-    }
-
-
-
-}
-
-
-
-
-
-
-function updateLanguageButton(lang){
-
-
-    const languageMap = {
-
-
-        en:"🌐 EN ▼",
-
-        zh:"🌐 中文 ▼",
-
-        jp:"🌐 JP ▼"
-
-
-    };
-
-
-    languageButton.innerHTML =
-    languageMap[lang];
-
-
-}
-
-
-
-
-
-
-
-languageButtons.forEach(button=>{
-
-
-    button.addEventListener(
-    "click",
-    ()=>{
-
-
-        const lang =
-        button.dataset.lang;
-
-
-        loadLanguage(lang);
-
-
-    });
-
-
-});
-
-
-
-
-
-
-// Default language
+/* =========================================
+   Yiang V2.0
+   Main JavaScript
+========================================= */
+
+
+/* =========================================
+   Page Loading
+========================================= */
 
 
 document.addEventListener(
@@ -154,53 +14,191 @@ document.addEventListener(
 ()=>{
 
 
-    loadLanguage("en");
+console.log(
+"Yiang V2.0 Website Loaded"
+);
+
+
+
+/* 初始化 */
+
+initLanguage();
+
+initMobileMenu();
+
+initScrollAnimation();
+
+initSmoothScroll();
+
+initLazyLoad();
+
+initVideo();
+
+
+
+});
+
+
+
+
+
+/* =========================================
+   Language System
+========================================= */
+
+
+const languageButton =
+document.querySelector(
+"#language-toggle"
+);
+
+
+let currentLanguage =
+localStorage.getItem(
+"yiang-language"
+) || "en";
+
+
+
+
+
+function initLanguage(){
+
+
+changeLanguage(
+currentLanguage
+);
+
+
+
+if(languageButton){
+
+
+languageButton.addEventListener(
+"click",
+()=>{
+
+
+currentLanguage =
+currentLanguage==="en"
+?
+"zh"
+:
+"en";
+
+
+localStorage.setItem(
+"yiang-language",
+currentLanguage
+);
+
+
+
+changeLanguage(
+currentLanguage
+);
+
+
+
+});
+
+
+}
+
+
+
+}
+
+
+
+
+function changeLanguage(lang){
+
+
+
+const elements =
+document.querySelectorAll(
+"[data-en]"
+);
+
+
+
+elements.forEach(
+element=>{
+
+
+element.innerHTML =
+element.dataset[lang];
 
 
 });
 
 
 
+if(languageButton){
+
+languageButton.innerHTML =
+lang==="en"
+?
+"中文"
+:
+"English";
+
+}
+
+
+
+}
 
 
 
 
 
-// ===============================
-// SCROLL ANIMATION
-// ===============================
+/* =========================================
+   Mobile Menu
+========================================= */
+
+
+function initMobileMenu(){
 
 
 
-const observer =
-new IntersectionObserver(
-(entries)=>{
+const menuButton =
+document.querySelector(
+".menu-toggle"
+);
 
 
-    entries.forEach(entry=>{
+const nav =
+document.querySelector(
+".nav-menu"
+);
 
 
-        if(entry.isIntersecting){
+
+if(!menuButton || !nav)
+return;
 
 
-            entry.target.classList.add(
-            "show"
-            );
 
 
-        }
+menuButton.addEventListener(
+"click",
+()=>{
 
 
-    });
+menuButton.classList.toggle(
+"active"
+);
 
 
-},
-{
+nav.classList.toggle(
+"open"
+);
 
-threshold:0.15
+
 
 });
-
 
 
 
@@ -208,12 +206,225 @@ threshold:0.15
 
 document
 .querySelectorAll(
-".section, .project-card"
+".nav-menu a"
 )
-.forEach(element=>{
+.forEach(
+link=>{
 
 
-    observer.observe(element);
+link.addEventListener(
+"click",
+()=>{
+
+
+nav.classList.remove(
+"open"
+);
+
+
+menuButton.classList.remove(
+"active"
+);
+
+
+});
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+/* =========================================
+   Scroll Animation
+========================================= */
+
+
+function initScrollAnimation(){
+
+
+
+const observer =
+new IntersectionObserver(
+entries=>{
+
+
+entries.forEach(
+entry=>{
+
+
+if(entry.isIntersecting){
+
+
+entry.target.classList.add(
+"show"
+);
+
+
+}
+
+
+});
+
+
+},
+{
+
+threshold:0.15
+
+}
+
+);
+
+
+
+
+
+const animatedElements =
+document.querySelectorAll(
+".fade-up,.fade-left,.fade-right"
+);
+
+
+
+animatedElements.forEach(
+item=>{
+
+
+observer.observe(item);
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   Smooth Scroll
+========================================= */
+
+
+function initSmoothScroll(){
+
+
+
+document
+.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(
+anchor=>{
+
+
+anchor.addEventListener(
+"click",
+function(e){
+
+
+
+const target =
+document.querySelector(
+this.getAttribute("href")
+);
+
+
+
+if(target){
+
+
+e.preventDefault();
+
+
+target.scrollIntoView({
+
+behavior:"smooth",
+block:"start"
+
+});
+
+
+}
+
+
+
+});
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   Lazy Loading Images
+========================================= */
+
+
+function initLazyLoad(){
+
+
+
+const images =
+document.querySelectorAll(
+"img[data-src]"
+);
+
+
+
+const observer =
+new IntersectionObserver(
+entries=>{
+
+
+entries.forEach(
+entry=>{
+
+
+if(entry.isIntersecting){
+
+
+const img =
+entry.target;
+
+
+img.src =
+img.dataset.src;
+
+
+img.removeAttribute(
+"data-src"
+);
+
+
+observer.unobserve(
+img
+);
+
+
+}
+
+
+});
 
 
 });
@@ -221,19 +432,100 @@ document
 
 
 
+images.forEach(
+img=>{
+
+
+observer.observe(
+img
+);
+
+
+});
+
+
+}
 
 
 
 
-// ===============================
-// HEADER EFFECT
-// ===============================
 
 
 
-const header =
-document.querySelector(".header");
+/* =========================================
+   Video Control
+========================================= */
 
+
+function initVideo(){
+
+
+
+const videos =
+document.querySelectorAll(
+"video"
+);
+
+
+
+videos.forEach(
+video=>{
+
+
+video.addEventListener(
+"loadeddata",
+()=>{
+
+
+video.classList.add(
+"loaded"
+);
+
+
+});
+
+
+
+/*
+移动端避免自动播放失败
+*/
+
+video.addEventListener(
+"click",
+()=>{
+
+
+if(video.paused){
+
+video.play();
+
+}
+else{
+
+video.pause();
+
+}
+
+
+});
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   Header Scroll Effect
+========================================= */
 
 
 window.addEventListener(
@@ -241,23 +533,39 @@ window.addEventListener(
 ()=>{
 
 
-    if(window.scrollY > 50){
+const header =
+document.querySelector(
+"header"
+);
 
 
-        header.style.background =
-        "rgba(5,7,13,0.95)";
+
+if(!header)
+return;
 
 
-    }
-
-    else{
 
 
-        header.style.background =
-        "rgba(5,7,13,0.75)";
+if(window.scrollY>50){
 
 
-    }
+header.classList.add(
+"scrolled"
+);
+
+
+}
+
+else{
+
+
+header.classList.remove(
+"scrolled"
+);
+
+
+}
+
 
 
 });
@@ -268,16 +576,110 @@ window.addEventListener(
 
 
 
+/* =========================================
+   Back To Top
+========================================= */
 
-// ===============================
-// MOBILE MENU READY
-// ===============================
+
+const backTop =
+document.querySelector(
+".back-top"
+);
 
 
-// Reserved for future mobile navigation upgrade
 
+if(backTop){
+
+
+backTop.onclick =
+()=>{
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+};
+
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   Button Ripple Effect
+========================================= */
+
+
+document
+.querySelectorAll(
+"button,.btn-primary"
+)
+.forEach(
+button=>{
+
+
+button.addEventListener(
+"click",
+function(){
+
+
+this.classList.add(
+"clicked"
+);
+
+
+
+setTimeout(
+()=>{
+
+
+this.classList.remove(
+"clicked"
+);
+
+
+},
+300
+);
+
+
+
+});
+
+
+});
+
+
+
+
+
+
+/* =========================================
+   Console Branding
+========================================= */
 
 
 console.log(
-"Yiang V2.0 loaded successfully."
+"%c Yiang V2.0 ",
+`
+background:#111;
+color:white;
+font-size:20px;
+padding:10px;
+`
+);
+
+
+console.log(
+"Creative Intelligence Studio"
 );

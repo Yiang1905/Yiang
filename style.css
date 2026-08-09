@@ -1,18 +1,12 @@
-/* =====================================
-   Yiang V2.0
-   Creative Technology Studio
-   ===================================== */
-
-
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
 html {
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 
@@ -22,23 +16,25 @@ body {
     font-family:
     -apple-system,
     BlinkMacSystemFont,
+    "SF Pro Display",
     "Segoe UI",
     Arial,
     sans-serif;
 
-    background:#05070d;
+    background:#ffffff;
 
-    color:#ffffff;
+    color:#111;
 
-    line-height:1.7;
+    line-height:1.6;
 
 }
 
 
 
+
 img {
 
-    width:100%;
+    max-width:100%;
 
     display:block;
 
@@ -46,11 +42,12 @@ img {
 
 
 
+
 a {
 
-    color:inherit;
-
     text-decoration:none;
+
+    color:inherit;
 
 }
 
@@ -71,7 +68,7 @@ a {
 
 
 /* =========================
- HEADER
+HEADER
 ========================= */
 
 
@@ -81,18 +78,19 @@ a {
 
     top:0;
 
+    left:0;
+
     width:100%;
 
-    z-index:999;
+    z-index:1000;
 
     background:
-    rgba(5,7,13,0.75);
+    rgba(255,255,255,0.72);
 
-    backdrop-filter:
-    blur(15px);
+    backdrop-filter:blur(20px);
 
     border-bottom:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(0,0,0,0.06);
 
 }
 
@@ -113,58 +111,33 @@ a {
 
 
 
-.logo-area {
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-
-
 .logo {
 
-    width:45px;
+    width:110px;
 
-    height:45px;
-
-}
-
-
-
-.brand-name {
-
-    font-size:26px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
+    height:auto;
 
 }
 
 
 
 
-.nav {
+
+.navigation {
 
     display:flex;
 
-    align-items:center;
-
-    gap:30px;
+    gap:35px;
 
 }
 
 
 
-.nav a {
+.navigation a {
 
     font-size:15px;
 
-    color:#d8d8d8;
+    color:#333;
 
     transition:.3s;
 
@@ -172,9 +145,9 @@ a {
 
 
 
-.nav a:hover {
+.navigation a:hover {
 
-    color:white;
+    color:#0071e3;
 
 }
 
@@ -182,10 +155,7 @@ a {
 
 
 
-/* LANGUAGE */
-
-
-.language {
+.language-selector {
 
     position:relative;
 
@@ -193,19 +163,21 @@ a {
 
 
 
-.language button {
-
-    background:none;
+#languageBtn {
 
     border:none;
 
-    color:white;
+    background:#f5f5f7;
+
+    padding:10px 16px;
+
+    border-radius:20px;
 
     cursor:pointer;
 
-    font-size:14px;
-
 }
+
+
 
 
 
@@ -215,12 +187,12 @@ a {
 
     right:0;
 
-    top:35px;
+    top:45px;
 
-    width:130px;
+    background:white;
 
-    background:
-    rgba(20,25,35,.95);
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.12);
 
     border-radius:12px;
 
@@ -236,39 +208,24 @@ a {
 
     display:block;
 
-    width:100%;
+    width:120px;
 
-    padding:8px;
+    padding:10px;
 
-    text-align:left;
+    border:none;
 
-}
+    background:white;
 
-
-
-.language-menu button:hover {
-
-    background:
-    rgba(255,255,255,.1);
+    cursor:pointer;
 
 }
-
-
-
-.language:hover .language-menu {
-
-    display:block;
-
-}
-
-
 
 
 
 
 
 /* =========================
- HERO
+HERO
 ========================= */
 
 
@@ -278,24 +235,58 @@ a {
 
     min-height:700px;
 
+    position:relative;
+
     display:flex;
 
     align-items:center;
 
-    position:relative;
-
-    background-image:
-    linear-gradient(
-    rgba(0,0,0,.45),
-    rgba(0,0,0,.75)
-    ),
-    url("image/hero.webp");
-
-    background-size:cover;
-
-    background-position:center;
+    overflow:hidden;
 
 }
+
+
+
+.hero-background {
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+
+.hero-background img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.hero-overlay {
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.95),
+    rgba(255,255,255,.35)
+    );
+
+}
+
+
 
 
 
@@ -303,9 +294,9 @@ a {
 
     position:relative;
 
-    z-index:2;
+    max-width:650px;
 
-    max-width:800px;
+    z-index:2;
 
 }
 
@@ -313,11 +304,15 @@ a {
 
 .hero h1 {
 
-    font-size:64px;
+    font-size:
 
-    line-height:1.15;
+    clamp(45px,6vw,75px);
 
-    margin-bottom:30px;
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+    font-weight:700;
 
 }
 
@@ -327,17 +322,16 @@ a {
 
     font-size:22px;
 
-    color:#d0d0d0;
+    color:#555;
 
-    max-width:650px;
+    margin-bottom:40px;
 
 }
 
 
 
-.hero-buttons {
 
-    margin-top:40px;
+.hero-buttons {
 
     display:flex;
 
@@ -348,12 +342,13 @@ a {
 
 
 
-
 .btn {
 
-    padding:14px 32px;
+    padding:15px 35px;
 
-    border-radius:40px;
+    border-radius:35px;
+
+    display:inline-block;
 
     transition:.3s;
 
@@ -363,9 +358,9 @@ a {
 
 .primary {
 
-    background:white;
+    background:#000;
 
-    color:black;
+    color:white;
 
 }
 
@@ -374,29 +369,30 @@ a {
 .secondary {
 
     border:
-    1px solid rgba(255,255,255,.5);
+
+    1px solid #ddd;
 
 }
+
 
 
 
 .btn:hover {
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
 }
-
 
 
 
 
 
 /* =========================
- SECTIONS
+INTRO
 ========================= */
 
 
-.section {
+.intro {
 
     padding:120px 0;
 
@@ -404,60 +400,15 @@ a {
 
 
 
-.dark {
-
-    background:#080b14;
-
-}
-
-
-
-.section-title {
-
-    text-align:center;
-
-    margin-bottom:70px;
-
-}
-
-
-
-.section-title h2 {
-
-    font-size:42px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.section-title p {
-
-    color:#aaa;
-
-    font-size:18px;
-
-}
-
-
-
-
-
-
-/* =========================
- VISION
-========================= */
-
-
-.vision-grid {
+.intro-grid {
 
     display:grid;
 
     grid-template-columns:
+
     1fr 1fr;
 
-    gap:60px;
+    gap:70px;
 
     align-items:center;
 
@@ -465,32 +416,50 @@ a {
 
 
 
-.vision-text h3 {
+.intro h2 {
 
-    font-size:32px;
+    font-size:45px;
 
-    margin-bottom:20px;
-
-}
-
-
-
-.vision-text p {
-
-    color:#bbb;
-
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 
 
 
-.vision-image img {
+.intro p {
 
-    border-radius:25px;
+    font-size:20px;
+
+    color:#555;
 
 }
 
+
+
+.intro-image img {
+
+    border-radius:30px;
+
+}
+
+
+
+
+
+/* =========================
+SECTION TITLE
+========================= */
+
+
+.section-title {
+
+    text-align:center;
+
+    font-size:48px;
+
+    margin-bottom:60px;
+
+}
 
 
 
@@ -498,15 +467,158 @@ a {
 
 
 /* =========================
- PROJECTS
+PROJECTS
 ========================= */
 
 
-.projects-grid {
+.projects {
+
+    padding:120px 0;
+
+    background:#f5f5f7;
+
+}
+
+
+
+.project-grid {
 
     display:grid;
 
     grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+
+
+.project-card {
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.08);
+
+}
+
+
+
+.project-card:hover {
+
+    transform:translateY(-10px);
+
+}
+
+
+
+
+
+.project-card img {
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.project-content {
+
+    padding:35px;
+
+}
+
+
+
+.project-content h3 {
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.project-content p {
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.project-link {
+
+    color:#0071e3;
+
+}
+
+
+
+
+
+/* =========================
+TECHNOLOGY
+========================= */
+
+
+.technology {
+
+    padding:120px 0;
+
+}
+
+
+
+.technology-content {
+
+    text-align:center;
+
+}
+
+
+
+.technology-content>p {
+
+    max-width:800px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    color:#666;
+
+}
+
+
+
+.technology-list {
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:
+
     repeat(3,1fr);
 
     gap:30px;
@@ -515,54 +627,79 @@ a {
 
 
 
-.project-card {
+.tech-item {
 
-    background:
-    rgba(255,255,255,.05);
+    padding:35px;
 
     border-radius:25px;
 
-    overflow:hidden;
-
-    transition:.4s;
-
-    border:
-    1px solid rgba(255,255,255,.08);
+    background:#f5f5f7;
 
 }
 
 
 
-.project-card:hover {
-
-    transform:
-    translateY(-12px);
-
-}
 
 
 
-.project-card img {
-
-    height:250px;
-
-    object-fit:cover;
-
-}
+/* =========================
+DOCUMENTS
+========================= */
 
 
+.documents {
 
-.card-content {
+    padding:120px 0;
 
-    padding:30px;
+    background:#fafafa;
 
 }
 
 
 
-.card-content h3 {
 
-    font-size:25px;
+.document-grid {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+
+
+.document-card {
+
+    padding:35px;
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.document-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.document-card h3 {
 
     margin-bottom:15px;
 
@@ -570,312 +707,702 @@ a {
 
 
 
-.card-content p {
+.document-card p {
 
-    color:#aaa;
-
-    margin-bottom:20px;
+    color:#666;
 
 }
+/* =========================================
+   Yiang V2.0
+   Video Section
+========================================= */
 
 
-
-
-
-
-
-/* =========================
- TECHNOLOGY
-========================= */
-
-
-.technology-grid {
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:60px;
-
-    align-items:center;
-
-}
-
-
-
-.technology-text h3 {
-
-    font-size:34px;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.technology-text p {
-
-    color:#bbb;
-
-}
-
-
-
-
-
-
-/* =========================
- PARTNERS
-========================= */
-
-
-.partner-box {
-
+.video-section {
+    padding:120px 8%;
+    background:#050505;
     position:relative;
-
     overflow:hidden;
+}
 
-    border-radius:30px;
+
+.video-section::before {
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(
+        circle,
+        rgba(0,140,255,.25),
+        transparent 70%
+    );
+    top:-200px;
+    right:-150px;
+}
+
+
+.video-container {
+
+    max-width:1200px;
+    margin:auto;
+    position:relative;
+    z-index:2;
 
 }
 
 
 
-.partner-box img {
+.video-title {
 
-    height:450px;
+    text-align:center;
+    margin-bottom:50px;
 
+}
+
+
+.video-title h2 {
+
+    font-size:42px;
+    font-weight:700;
+    letter-spacing:-1px;
+
+}
+
+
+.video-title p {
+
+    margin-top:15px;
+    color:#999;
+    font-size:18px;
+
+}
+
+
+
+
+.video-box {
+
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:24px;
+    overflow:hidden;
+    background:#111;
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.5);
+
+}
+
+
+
+
+.video-box video {
+
+    width:100%;
+    height:100%;
     object-fit:cover;
 
 }
 
 
 
-.partner-content {
 
-    position:absolute;
+.video-placeholder {
 
-    bottom:40px;
-
-    left:40px;
-
-}
-
-
-
-
-
-
-
-/* =========================
- INVESTOR
-========================= */
-
-
-.investor-area {
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:50px;
-
-    align-items:center;
-
-}
-
-
-
-.investor-image img {
-
-    border-radius:25px;
-
-}
-
-
-
-.documents {
-
+    height:100%;
     display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-
-    margin-top:30px;
-
-}
-
-
-
-.documents a {
-
-    padding:15px 20px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    border-radius:12px;
-
-}
-
-
-
-.documents a:hover {
-
-    background:white;
-
-    color:black;
-
-}
-
-
-
-
-
-
-
-/* =========================
- CONTACT
-========================= */
-
-
-.contact {
-
-    text-align:center;
-
-}
-
-
-
-.contact-box {
-
+    align-items:center;
+    justify-content:center;
+    color:#777;
     font-size:20px;
 
-    color:#ccc;
+}
+
+
+
+/* =========================================
+   Contact Section
+========================================= */
+
+
+.contact-section {
+
+    padding:120px 8%;
+    background:#ffffff;
+    color:#111;
 
 }
 
 
 
+.contact-wrapper {
 
-
-
-
-/* =========================
- FOOTER
-========================= */
-
-
-.footer {
-
-    padding:40px 0;
-
-    text-align:center;
-
-    background:#020308;
-
-    color:#777;
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    1fr 1fr;
+    gap:70px;
 
 }
 
 
 
+.contact-left h2 {
 
-
-
-/* =========================
- MOBILE
-========================= */
-
-
-@media(max-width:900px){
-
-
-.nav {
-
-    display:none;
+    font-size:44px;
+    margin-bottom:25px;
 
 }
 
 
-.hero h1 {
 
-    font-size:42px;
+.contact-left p {
 
-}
-
-
-.hero p {
-
+    color:#666;
+    line-height:1.8;
     font-size:18px;
 
 }
 
 
-.projects-grid,
-.vision-grid,
-.technology-grid,
-.investor-area {
-
-    grid-template-columns:1fr;
-
-}
 
 
-.section {
+.contact-info {
 
-    padding:80px 0;
+    margin-top:40px;
 
 }
 
 
-}
-/* =========================
-Yiang V2.0 Hero Image
-========================= */
+.contact-item {
 
-
-.hero{
-position:relative;
-min-height:90vh;
-display:flex;
-align-items:center;
-overflow:hidden;
-}
-
-
-.hero-background{
-
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+    font-size:18px;
 
 }
 
 
-.hero-background img{
+.contact-item span {
 
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-filter:
-brightness(0.55);
+    color:#555;
 
 }
 
 
 
-.hero-content{
 
-position:relative;
-z-index:2;
+.contact-card {
+
+    background:#f7f7f7;
+    padding:45px;
+    border-radius:30px;
+
+}
+
+
+
+
+.contact-card h3 {
+
+    font-size:28px;
+    margin-bottom:30px;
+
+}
+
+
+
+.contact-card input,
+.contact-card textarea {
+
+
+    width:100%;
+    border:none;
+    background:white;
+    padding:16px 20px;
+    margin-bottom:15px;
+    border-radius:14px;
+    font-size:16px;
+    outline:none;
+
+}
+
+
+
+.contact-card textarea {
+
+    height:130px;
+    resize:none;
+
+}
+
+
+
+
+.contact-card button {
+
+
+    width:100%;
+    border:none;
+    background:#111;
+    color:white;
+    padding:17px;
+    border-radius:50px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+
+
+.contact-card button:hover {
+
+    background:#007aff;
+    transform:translateY(-3px);
+
+}
+
+
+
+/* =========================================
+   Footer
+========================================= */
+
+
+.footer {
+
+    background:#050505;
+    color:white;
+    padding:70px 8% 35px;
+
+}
+
+
+
+.footer-container {
+
+
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    2fr 1fr 1fr;
+    gap:50px;
+
+}
+
+
+
+
+.footer-logo img {
+
+
+    width:120px;
+    margin-bottom:20px;
+
+}
+
+
+
+.footer-logo p {
+
+    color:#999;
+    line-height:1.7;
+
+}
+
+
+
+.footer h4 {
+
+
+    font-size:18px;
+    margin-bottom:20px;
+
+}
+
+
+
+.footer ul {
+
+    list-style:none;
+    padding:0;
+
+}
+
+
+
+.footer li {
+
+    margin-bottom:12px;
+
+}
+
+
+
+.footer a {
+
+    color:#aaa;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+
+
+.footer a:hover {
+
+    color:white;
+
+}
+
+
+
+
+.footer-bottom {
+
+
+    margin-top:50px;
+    padding-top:25px;
+    border-top:1px solid #222;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+
+}
+
+
+
+
+
+/* =========================================
+   Scroll Animation
+========================================= */
+
+
+.fade-up {
+
+
+    opacity:0;
+    transform:translateY(50px);
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+
+
+.fade-up.show {
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+
+
+
+.fade-left {
+
+
+    opacity:0;
+    transform:translateX(-50px);
+    transition:.8s;
+
+}
+
+
+
+.fade-left.show {
+
+
+    opacity:1;
+    transform:translateX(0);
+
+}
+
+
+
+
+.fade-right {
+
+
+    opacity:0;
+    transform:translateX(50px);
+    transition:.8s;
+
+}
+
+
+
+.fade-right.show {
+
+
+    opacity:1;
+    transform:translateX(0);
+
+}
+
+
+
+/* =========================================
+   Floating Animation
+========================================= */
+
+
+.float {
+
+
+    animation:
+    floatAnimation 6s ease-in-out infinite;
+
+}
+
+
+
+@keyframes floatAnimation {
+
+
+    0% {
+
+        transform:translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:translateY(-15px);
+
+    }
+
+
+    100% {
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+
+/* =========================================
+   Mobile Responsive
+========================================= */
+
+
+@media(max-width:900px){
+
+
+    .contact-wrapper {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .footer-container {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .video-section {
+
+        padding:80px 5%;
+
+    }
+
+
+
+    .video-title h2 {
+
+        font-size:32px;
+
+    }
+
+
+
+    .contact-left h2 {
+
+        font-size:34px;
+
+    }
+
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+body {
+
+    overflow-x:hidden;
+
+}
+
+
+
+.video-section,
+.contact-section,
+.footer {
+
+    padding-left:5%;
+    padding-right:5%;
+
+}
+
+
+
+.video-box {
+
+    border-radius:18px;
+
+}
+
+
+
+.contact-card {
+
+    padding:30px 20px;
+
+}
+
+
+
+.footer {
+
+    text-align:center;
+
+}
+
+
+
+.footer-logo img {
+
+    margin:auto;
+
+}
+
+
+
+}
+
+
+
+
+/* =========================================
+   Global Button Animation
+========================================= */
+
+
+.btn-primary {
+
+
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    transition:.35s;
+
+}
+
+
+
+.btn-primary:hover {
+
+
+    transform:translateY(-5px);
+    background:#007aff;
+    box-shadow:
+    0 15px 30px rgba(0,122,255,.3);
+
+}
+
+
+
+
+
+/* =========================================
+   Image Hover Effects
+========================================= */
+
+
+.project-card img,
+.product-image img {
+
+
+    transition:
+    transform .6s ease;
+
+}
+
+
+
+.project-card:hover img,
+.product-image:hover img {
+
+
+    transform:scale(1.06);
+
+}
+
+
+
+
+/* =========================================
+   Loading Animation
+========================================= */
+
+
+.loading {
+
+
+    animation:
+    loadingFade 1.5s infinite;
+
+}
+
+
+
+@keyframes loadingFade {
+
+
+    0% {
+
+        opacity:.3;
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        opacity:.3;
+
+    }
+
 
 }

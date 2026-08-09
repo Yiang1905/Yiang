@@ -7,40 +7,51 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yiang | Creative Technology Studio</title>
 
-<meta name="description" content="Yiang Creative Technology Studio creates innovative solutions in AI, healthcare and future technology.">
+<title>
+Yiang | Creative Intelligence Studio
+</title>
+
+
+<meta name="description"
+content="Yiang is an independent creative intelligence studio focusing on AI innovation, future technology and intelligent solutions.">
 
 
 <link rel="stylesheet" href="style.css">
 
 
+<link rel="icon" href="image/yiang-logo.svg">
+
+
 </head>
+
 
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+
+<!-- ===========================
+     Header
+=========================== -->
 
 
 <header class="header">
 
 
-<div class="container nav-container">
+<div class="nav-container">
 
 
-<div class="logo-area">
+
+<div class="logo">
 
 
-<img src="image/yiang-logo.png"
-class="logo"
+<a href="index.html">
+
+<img src="image/yiang-logo.svg"
 alt="Yiang Logo">
 
-
-<span class="brand-name">
-Yiang
-</span>
+</a>
 
 
 </div>
@@ -49,120 +60,76 @@ Yiang
 
 
 
-<nav class="nav">
+<button class="menu-toggle">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</button>
+
+
+
+
+
+<nav class="nav-menu">
 
 
 <a href="#home"
-data-i18n="nav_home">
-
+data-en="Home"
+data-zh="首页">
 Home
-
-</a>
-
-
-
-<a href="#vision"
-data-i18n="nav_vision">
-
-Vision
-
 </a>
 
 
 
 <a href="#projects"
-data-i18n="nav_projects">
-
+data-en="Projects"
+data-zh="项目">
 Projects
-
 </a>
 
 
 
 <a href="#technology"
-data-i18n="nav_technology">
-
+data-en="Technology"
+data-zh="技术">
 Technology
-
 </a>
 
 
 
-<a href="#partners"
-data-i18n="nav_partners">
-
-Partners
-
-</a>
-
-
-
-<a href="#investor"
-data-i18n="nav_investor">
-
-Investor
-
+<a href="#video"
+data-en="Video"
+data-zh="视频">
+Video
 </a>
 
 
 
 <a href="#contact"
-data-i18n="nav_contact">
-
+data-en="Contact"
+data-zh="联系">
 Contact
-
 </a>
 
 
 
-
-
-<div class="language">
-
-
-<button id="language-btn">
-
-🌐 EN ▼
-
-</button>
+</nav>
 
 
 
-<div class="language-menu">
 
 
-<button data-lang="en">
-
-English
-
-</button>
-
-
-
-<button data-lang="zh">
+<button id="language-toggle"
+class="language-btn">
 
 中文
 
 </button>
 
-
-
-<button data-lang="jp">
-
-日本語
-
-</button>
-
-
-
-</div>
-
-
-</div>
-
-
-
-</nav>
 
 
 </div>
@@ -175,49 +142,56 @@ English
 
 
 
-<!-- ================= MAIN ================= -->
+<!-- ===========================
+     Hero Section
+=========================== -->
 
 
-<main>
-
-
-
-
-<!-- ================= HERO ================= -->
-
-
-<!-- ================= HERO ================= -->
-
-<section id="home" class="hero">
-
-
-<div class="hero-background">
-
-<img src="image/hero-banner.webp""
-alt="Yiang Future Technology">
-
-</div>
+<section id="home"
+class="hero">
 
 
 
-<div class="container hero-content">
+<div class="hero-content fade-up">
 
 
-<h1 data-i18n="hero_title">
 
-Building Ideas Into Future Technologies
+<h1
+data-en="
+Creating Future Intelligence
+Through Human Imagination
+"
+data-zh="
+以人类想象力
+创造未来智能
+">
+
+Creating Future Intelligence
+Through Human Imagination
 
 </h1>
 
 
 
-<p data-i18n="hero_description">
 
-Yiang creates innovative solutions
-at the intersection of AI,
-healthcare and human experience.
+
+<p
+
+data-en="
+Yiang is an independent creative studio exploring AI,
+health technology and future lifestyle innovation.
+"
+
+data-zh="
+Yiang 是一家独立创意公司，
+专注人工智能、健康科技以及未来生活创新。
+">
+
+Yiang is an independent creative studio exploring AI,
+health technology and future lifestyle innovation.
 
 </p>
+
 
 
 
@@ -226,8 +200,10 @@ healthcare and human experience.
 
 
 <a href="#projects"
-class="btn primary"
-data-i18n="hero_button_project">
+class="btn-primary"
+
+data-en="Explore Projects"
+data-zh="探索项目">
 
 Explore Projects
 
@@ -235,19 +211,47 @@ Explore Projects
 
 
 
-<a href="#contact"
-class="btn secondary"
-data-i18n="hero_button_partner">
 
-Partner With Us
+<a href="#contact"
+class="btn-secondary"
+
+data-en="Contact Us"
+data-zh="联系我们">
+
+Contact Us
 
 </a>
 
 
+
 </div>
 
 
+
+
 </div>
+
+
+
+
+
+
+
+<div class="hero-image fade-right">
+
+
+<img src="image/hero.webp"
+
+alt="Future AI Technology"
+
+class="float">
+
+
+</div>
+
+
+
+
 
 
 </section>
@@ -256,44 +260,47 @@ Partner With Us
 
 
 
+<!-- ===========================
+     Vision Section
+=========================== -->
 
 
-<!-- ================= VISION ================= -->
+<section class="vision">
 
 
-<section id="vision"
-class="section">
+<div class="section-title fade-up">
 
 
+<h2
 
-<div class="container">
+data-en="Vision"
+data-zh="愿景">
 
-
-
-<div class="section-title">
-
-
-
-<h2 data-i18n="vision_title">
-
-Our Vision
+Vision
 
 </h2>
 
 
 
-<p data-i18n="vision_subtitle">
+<p
 
-Building meaningful technology for the future.
+data-en="
+Connecting creativity and technology
+to build meaningful future products.
+"
+
+data-zh="
+连接创意与科技，
+打造具有价值的未来产品。
+">
+
+Connecting creativity and technology
+to build meaningful future products.
 
 </p>
 
 
-
 </div>
-
-
-
 
 
 
@@ -302,50 +309,66 @@ Building meaningful technology for the future.
 
 
 
+<div class="vision-card fade-up">
 
 
-<div class="vision-text">
+<h3
 
+data-en="Creative Intelligence"
+data-zh="创意智能">
 
-
-<h3 data-i18n="vision_heading">
-
-Yiang Creative Technology Studio
+Creative Intelligence
 
 </h3>
 
 
+<p
 
+data-en="
+Ideas powered by AI and human creativity.
+"
 
+data-zh="
+通过人工智能与人类创造力驱动创新。
+">
 
-<p data-i18n="vision_text_1">
-
-
-Yiang focuses on discovering,
-designing and developing innovative
-technology concepts that connect
-artificial intelligence,
-healthcare and human life.
-
-
-</p>
-
-
-
-
-
-
-<p data-i18n="vision_text_2">
-
-
-We believe future technologies should
-not only be powerful,
-but also meaningful and human-centered.
-
+Ideas powered by AI and human creativity.
 
 </p>
 
 
+</div>
+
+
+
+
+
+<div class="vision-card fade-up">
+
+
+<h3
+
+data-en="Future Technology"
+data-zh="未来科技">
+
+Future Technology
+
+</h3>
+
+
+<p
+
+data-en="
+Exploring technologies that improve human life.
+"
+
+data-zh="
+探索改善人类生活的新兴技术。
+">
+
+Exploring technologies that improve human life.
+
+</p>
 
 
 </div>
@@ -354,61 +377,77 @@ but also meaningful and human-centered.
 
 
 
+<div class="vision-card fade-up">
 
 
-<div class="vision-image">
+<h3
+
+data-en="Global Collaboration"
+data-zh="全球合作">
+
+Global Collaboration
+
+</h3>
 
 
-image/studio-workspace.webp
-alt="Yiang Studio">
+<p
+
+data-en="
+Connecting innovators worldwide.
+"
+
+data-zh="
+连接全球创新伙伴。
+">
+
+Connecting innovators worldwide.
+
+</p>
 
 
 </div>
 
 
 
-
-
-
-</div>
-
-
 </div>
 
 
 
-</section>
-<!-- ================= PROJECTS ================= -->
+</section><!-- ===========================
+     Projects Section
+=========================== -->
 
 
 <section id="projects"
-class="section dark">
+class="projects">
 
 
 
-<div class="container">
+<div class="section-title fade-up">
 
 
+<h2
+data-en="Our Projects"
+data-zh="我们的项目">
 
-<div class="section-title">
-
-
-
-<h2 data-i18n="projects_title">
-
-Featured Projects
+Our Projects
 
 </h2>
 
 
 
+<p
+data-en="
+Independent ideas transforming into future possibilities.
+"
 
-<p data-i18n="projects_subtitle">
+data-zh="
+将独立创意转化为未来可能。
+">
 
-Exploring the future through technology.
+Independent ideas transforming into future possibilities.
 
 </p>
-
 
 
 </div>
@@ -418,8 +457,7 @@ Exploring the future through technology.
 
 
 
-
-<div class="projects-grid">
+<div class="project-grid">
 
 
 
@@ -427,45 +465,130 @@ Exploring the future through technology.
 
 <!-- NeuroSleep -->
 
-
-<div class="project-card">
-
+<div class="project-card fade-up">
 
 
-image/ai-sleep-technology.webp
-alt="NeuroSleep Technology">
+<img src="image/neurosleep.webp"
 
+alt="NeuroSleep AI Sleep System">
 
 
 
 
-<div class="card-content">
+
+<div class="project-content">
 
 
+<h3>
 
-<h3 data-i18n="neurosleep_title">
-
-NeuroSleep Technology
+NeuroSleep
 
 </h3>
 
 
 
+<p
 
-<p data-i18n="neurosleep_description">
+data-en="
+AI Intelligent Sleep System combining neuroscience,
+AI algorithms and smart hardware.
+"
 
-AI Intelligent Sleep System combining
-smart hardware,
-health monitoring and personalized care.
+data-zh="
+融合神经科学、人工智能算法与智能硬件的AI睡眠系统。
+">
+
+AI Intelligent Sleep System combining neuroscience,
+AI algorithms and smart hardware.
 
 </p>
 
 
 
 
-<a href="#">
 
-Learn More →
+<a href="neurosleep/index.html"
+
+class="project-link"
+
+data-en="Visit Website →"
+
+data-zh="访问官网 →">
+
+Visit Website →
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Smart Health -->
+
+<div class="project-card fade-up">
+
+
+<img src="image/ai-health.webp"
+
+alt="AI Health Technology">
+
+
+
+
+
+<div class="project-content">
+
+
+<h3
+
+data-en="AI Health Innovation"
+
+data-zh="AI健康创新">
+
+AI Health Innovation
+
+</h3>
+
+
+
+
+<p
+
+data-en="
+Exploring intelligent healthcare solutions
+for future generations.
+"
+
+data-zh="
+探索面向未来的新一代智能健康解决方案。
+">
+
+Exploring intelligent healthcare solutions
+for future generations.
+
+</p>
+
+
+
+<a href="#contact"
+
+class="project-link"
+
+data-en="合作咨询 →"
+
+data-zh="合作咨询 →">
+
+合作咨询 →
 
 </a>
 
@@ -475,7 +598,6 @@ Learn More →
 </div>
 
 
-
 </div>
 
 
@@ -485,53 +607,70 @@ Learn More →
 
 
 
-<!-- AI WorkStation -->
+
+<!-- Future Technology -->
 
 
-<div class="project-card">
+<div class="project-card fade-up">
 
 
+<img src="image/future-tech.webp"
 
-<img src="image/ai-workstation.webp"
-alt="AI WorkStation">
-
-
-
-
-
-<div class="card-content">
+alt="Future Technology">
 
 
 
-<h3 data-i18n="ai_title">
 
-AI WorkStation
+
+<div class="project-content">
+
+
+<h3
+
+data-en="Future Concepts"
+
+data-zh="未来概念">
+
+Future Concepts
 
 </h3>
 
 
 
 
-<p data-i18n="ai_description">
+<p
 
-An autonomous AI productivity system
-designed to enhance creativity,
-automation and digital workflows.
+data-en="
+Creating innovative concepts
+for tomorrow's world.
+"
+
+data-zh="
+创造面向未来世界的创新概念。
+">
+
+Creating innovative concepts
+for tomorrow's world.
 
 </p>
 
 
 
 
-<a href="#">
+<a href="#contact"
 
-Learn More →
+class="project-link"
+
+data-en="Explore →"
+
+data-zh="探索 →">
+
+Explore →
 
 </a>
 
 
 
-
 </div>
 
 
@@ -542,59 +681,98 @@ Learn More →
 
 
 
+</div>
 
 
 
-<!-- Future Innovation -->
 
-
-<div class="project-card">
-
-
-
-<img src="image/global.webp"
-alt="Future Innovation">
+</section>
 
 
 
 
 
-<div class="card-content">
 
 
 
-<h3 data-i18n="future_title">
 
-Future Innovation
+
+<!-- ===========================
+     NeuroSleep Highlight
+=========================== -->
+
+
+<section class="highlight">
+
+
+
+<div class="highlight-container">
+
+
+
+<div class="highlight-text fade-left">
+
+
+<h2>
+
+NeuroSleep
+
+</h2>
+
+
+
+<h3
+
+data-en="
+AI Intelligent Sleep System
+"
+
+data-zh="
+AI智能睡眠系统
+">
+
+AI Intelligent Sleep System
 
 </h3>
 
 
 
 
-<p data-i18n="future_description">
+<p
 
-Exploring emerging technologies
-that shape tomorrow.
+data-en="
+A next-generation sleep technology platform
+designed to improve sleep quality through
+AI monitoring, smart adjustment and health data analysis.
+"
+
+
+data-zh="
+下一代智能睡眠科技平台，
+通过AI监测、智能调节和健康数据分析，
+提升人类睡眠质量。
+">
+
+A next-generation sleep technology platform
+designed to improve sleep quality through
+AI monitoring, smart adjustment and health data analysis.
 
 </p>
 
 
 
 
-<a href="#">
 
-Learn More →
+<a href="neurosleep/index.html"
+
+class="btn-primary">
+
+Explore NeuroSleep
 
 </a>
 
 
 
-
-</div>
-
-
-
 </div>
 
 
@@ -602,7 +780,18 @@ Learn More →
 
 
 
+
+<div class="highlight-image fade-right">
+
+
+<img src="image/neurosleep-product.webp"
+
+alt="NeuroSleep Product">
+
 </div>
+
+
+
 
 
 </div>
@@ -618,42 +807,51 @@ Learn More →
 
 
 
-<!-- ================= TECHNOLOGY ================= -->
 
+<!-- ===========================
+     Technology Section
+=========================== -->
 
 
 <section id="technology"
-class="section">
+
+class="technology">
 
 
 
-<div class="container">
 
 
-
-<div class="section-title">
-
+<div class="section-title fade-up">
 
 
-<h2 data-i18n="technology_title">
+<h2
 
-Technology Philosophy
+data-en="Technology"
+
+data-zh="核心技术">
+
+Technology
 
 </h2>
 
 
 
+<p
 
-<p data-i18n="technology_subtitle">
+data-en="
+Where creativity meets advanced technology.
+"
 
-Where artificial intelligence meets human needs.
+data-zh="
+创意与先进科技的融合。
+">
+
+Where creativity meets advanced technology.
 
 </p>
 
 
-
 </div>
-
 
 
 
@@ -666,66 +864,179 @@ Where artificial intelligence meets human needs.
 
 
 
-<div class="technology-image">
+<div class="technology-item fade-up">
 
 
+<div class="icon">
 
-<img src="image/healthcare.webp"
-alt="AI Healthcare">
-
-
+AI
 
 </div>
 
 
+<h3>
 
-
-
-
-
-<div class="technology-text">
-
-
-
-<h3 data-i18n="healthcare_title">
-
-AI Healthcare & Future Systems
+Artificial Intelligence
 
 </h3>
 
 
+<p
+
+data-en="
+AI algorithms and intelligent systems.
+"
+
+data-zh="
+人工智能算法与智能系统。
+">
+
+AI algorithms and intelligent systems.
+
+</p>
+
+
+</div>
 
 
 
-<p data-i18n="healthcare_description">
 
 
-Yiang explores next-generation
-technology concepts that improve
-human experiences through artificial
-intelligence and intelligent systems.
 
+
+
+<div class="technology-item fade-up">
+
+
+<div class="icon">
+
+IoT
+
+</div>
+
+
+<h3>
+
+Smart Hardware
+
+</h3>
+
+
+<p
+
+data-en="
+Connecting devices and human experience.
+"
+
+data-zh="
+连接设备与人类体验。
+">
+
+Connecting devices and human experience.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="technology-item fade-up">
+
+
+<div class="icon">
+
+Data
+
+</div>
+
+
+<h3>
+
+Health Data
+
+</h3>
+
+
+<p
+
+data-en="
+Transforming data into meaningful insights.
+"
+
+data-zh="
+将数据转化为价值洞察。
+">
+
+Transforming data into meaningful insights.
 
 </p>
 
 
 
+</div>
 
 
-<p>
 
 
-From healthcare innovation to
-personal AI productivity,
-we focus on practical solutions
-with global potential.
 
+</div>
+
+
+
+
+</section>
+<!-- ===========================
+     Video Section
+=========================== -->
+
+
+<section id="video"
+class="video-section">
+
+
+
+<div class="video-container">
+
+
+
+<div class="video-title fade-up">
+
+
+<h2
+
+data-en="Yiang Introduction"
+
+data-zh="Yiang品牌介绍">
+
+Yiang Introduction
+
+</h2>
+
+
+
+
+<p
+
+data-en="
+Discover our vision and future technology concepts.
+"
+
+data-zh="
+了解我们的理念与未来科技探索。
+">
+
+Discover our vision and future technology concepts.
 
 </p>
 
 
 
-
 </div>
 
 
@@ -733,11 +1044,39 @@ with global potential.
 
 
 
-</div>
+
+<div class="video-box fade-up">
+
+
+
+<video
+
+controls
+
+preload="metadata"
+
+poster="image/video-cover.webp">
+
+
+<source src="videos/yiang-intro.mp4"
+
+type="video/mp4">
+
+
+Your browser does not support video.
+
+
+</video>
 
 
 
 </div>
+
+
+
+
+</div>
+
 
 
 
@@ -750,142 +1089,46 @@ with global potential.
 
 
 
-<!-- ================= PARTNERS ================= -->
+
+<!-- ===========================
+     Documents Section
+=========================== -->
+
+
+<section class="documents">
 
 
 
-<section id="partners"
-class="section dark">
+<div class="section-title fade-up">
 
 
+<h2
 
-<div class="container">
+data-en="Business Documents"
 
+data-zh="商业资料">
 
-
-
-
-<div class="section-title">
-
-
-
-<h2 data-i18n="partners_title">
-
-Global Partnership
+Business Documents
 
 </h2>
 
 
 
+<p
 
-<p data-i18n="partners_subtitle">
+data-en="
+Download company information and partnership materials.
+"
 
-Innovation without borders.
+data-zh="
+查看公司介绍与合作资料。
+">
 
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="partner-box">
-
-
-
-
-
-<img src="image/global.webp"
-alt="Global Partnership">
-
-
-
-
-
-
-<div class="partner-content">
-
-
-
-<h3 data-i18n="partner_heading">
-
-Building Future Connections
-
-</h3>
-
-
-
-
-<p data-i18n="partner_description">
-
-
-Yiang welcomes cooperation with
-technology companies,
-investors,
-research organizations and
-global partners.
-
+Download company information and partnership materials.
 
 </p>
 
 
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-</section>
-<!-- ================= INVESTOR ================= -->
-
-
-<section id="investor"
-class="section">
-
-
-
-<div class="container">
-
-
-
-
-
-<div class="section-title">
-
-
-
-<h2 data-i18n="investor_title">
-
-Investor Center
-
-</h2>
-
-
-
-
-<p data-i18n="investor_subtitle">
-
-Explore Yiang business opportunities.
-
-</p>
-
-
-
 </div>
 
 
@@ -894,74 +1137,31 @@ Explore Yiang business opportunities.
 
 
 
-<div class="investor-area">
-
-
-
-
-
-<div class="investor-image">
-
-
-<img src="image/investor.webp"
-alt="Investor Center">
-
-
-</div>
-
-
-
-
-
-
-
-<div class="investor-content">
-
-
-
-<h3 data-i18n="investor_heading">
-
-
-Strategic Partnership Opportunities
-
-
-</h3>
-
-
-
-
-
-<p data-i18n="investor_description">
-
-
-Yiang is developing innovative
-technology projects with global
-market potential.
-
-
-</p>
-
-
-
-
-
-
-
-<div class="documents">
+<div class="document-grid">
 
 
 
 
 
 <a href="documents/Yiang-Company-Profile.pdf"
-target="_blank">
+
+target="_blank"
+
+class="document-card fade-up">
 
 
-<span data-i18n="company_profile">
+<h3>
 
-Company Profile
+Yiang Company Profile
 
-</span>
+</h3>
+
+
+<p>
+
+Company Introduction PDF
+
+</p>
 
 
 </a>
@@ -973,17 +1173,28 @@ Company Profile
 
 
 <a href="documents/Yiang-Business-Proposal.pdf"
-target="_blank">
+
+target="_blank"
+
+class="document-card fade-up">
 
 
-<span data-i18n="business_proposal">
+<h3>
 
-Business Proposal
+Yiang Business Proposal
 
-</span>
+</h3>
+
+
+<p>
+
+Business Plan PDF
+
+</p>
 
 
 </a>
+
 
 
 
@@ -992,17 +1203,28 @@ Business Proposal
 
 
 <a href="documents/NeuroSleep-Investor-Deck.pdf"
-target="_blank">
+
+target="_blank"
+
+class="document-card fade-up">
 
 
-<span data-i18n="investor_deck">
+<h3>
+
+NeuroSleep Investor Deck
+
+</h3>
+
+
+<p>
 
 Investor Presentation
 
-</span>
+</p>
 
 
 </a>
+
 
 
 
@@ -1011,39 +1233,29 @@ Investor Presentation
 
 
 <a href="documents/Partnership-Opportunity.pdf"
-target="_blank">
+
+target="_blank"
+
+class="document-card fade-up">
 
 
-<span data-i18n="partnership">
+<h3>
 
 Partnership Opportunity
 
-</span>
+</h3>
+
+
+<p>
+
+Cooperation Information
+
+</p>
 
 
 </a>
 
 
-
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
 
 
 
@@ -1062,59 +1274,80 @@ Partnership Opportunity
 
 
 
-<!-- ================= CONTACT ================= -->
-
+<!-- ===========================
+     Contact Section
+=========================== -->
 
 
 <section id="contact"
-class="section contact">
 
-
-
-<div class="container">
+class="contact-section">
 
 
 
 
 
-<div class="section-title">
+<div class="contact-wrapper">
 
 
 
-<h2 data-i18n="contact_title">
 
-Contact
+
+<div class="contact-left fade-left">
+
+
+
+<h2
+
+data-en="Let's Create The Future"
+
+data-zh="一起创造未来">
+
+Let's Create The Future
 
 </h2>
 
 
 
 
-<p data-i18n="contact_subtitle">
+<p
 
-Let's build the future together.
+data-en="
+We welcome global partners,
+investors and innovators.
+"
+
+data-zh="
+我们欢迎全球合作伙伴、
+投资者以及创新者加入。
+">
+
+We welcome global partners,
+investors and innovators.
 
 </p>
 
 
 
-</div>
+
+
+
+
+<div class="contact-info">
 
 
 
 
 
+<div class="contact-item">
 
 
-<div class="contact-box">
-
-
-
-
-
-<p>
+<span>
 
 Email:
+
+</span>
+
 
 <a href="mailto:xhsj2005@gmail.com">
 
@@ -1123,31 +1356,39 @@ xhsj2005@gmail.com
 </a>
 
 
-</p>
+</div>
 
 
 
 
 
 
-<p>
+
+<div class="contact-item">
+
+
+<span>
 
 Phone:
 
+</span>
+
+
+<a href="tel:18603567665">
+
 18603567665
 
-</p>
+</a>
+
+
+</div>
 
 
 
 
 
 
-<p>
-
-Yiang Creative Technology Studio
-
-</p>
+</div>
 
 
 
@@ -1161,7 +1402,86 @@ Yiang Creative Technology Studio
 
 
 
+
+<div class="contact-card fade-right">
+
+
+
+<h3
+
+data-en="Contact Us"
+
+data-zh="联系我们">
+
+Contact Us
+
+</h3>
+
+
+
+
+<form>
+
+
+
+<input
+
+type="text"
+
+placeholder="Name">
+
+
+
+
+
+
+<input
+
+type="email"
+
+placeholder="Email">
+
+
+
+
+
+
+<textarea
+
+placeholder="Message">
+
+</textarea>
+
+
+
+
+
+
+
+<button type="submit">
+
+
+Send Message
+
+
+</button>
+
+
+
+
+</form>
+
+
+
+
 </div>
+
+
+
+
+
+</div>
+
 
 
 
@@ -1173,40 +1493,188 @@ Yiang Creative Technology Studio
 
 
 
-</main>
 
 
-
-
-
-
-
-
-
-<!-- ================= FOOTER ================= -->
-
+<!-- ===========================
+     Footer
+=========================== -->
 
 
 <footer class="footer">
 
 
 
-<div class="container">
+
+
+<div class="footer-container">
 
 
 
-<p data-i18n="footer">
 
 
-© 2026 Yiang Creative Technology Studio.
-All Rights Reserved.
+<div class="footer-logo">
 
+
+<img src="image/yiang-logo.svg"
+
+alt="Yiang Logo">
+
+
+
+<p>
+
+Yiang Creative Intelligence Studio
 
 </p>
 
 
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h4
+
+data-en="Navigation"
+
+data-zh="导航">
+
+Navigation
+
+</h4>
+
+
+<ul>
+
+
+<li>
+
+<a href="#home">
+
+Home
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="#projects">
+
+Projects
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#contact">
+
+Contact
+
+</a>
+
+</li>
+
+
+
+</ul>
+
 
 </div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+<h4
+
+data-en="Resources"
+
+data-zh="资源">
+
+Resources
+
+</h4>
+
+
+
+<ul>
+
+
+<li>
+
+<a href="documents/Yiang-Company-Profile.pdf">
+
+Company Profile
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="documents/NeuroSleep-Investor-Deck.pdf">
+
+Investor Deck
+
+</a>
+
+</li>
+
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="footer-bottom">
+
+
+<p>
+
+© 2026 Yiang. All Rights Reserved.
+
+</p>
+
+
+</div>
+
+
+
 
 
 
@@ -1218,8 +1686,12 @@ All Rights Reserved.
 
 
 
-<script src="script.js"></script>
 
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
 
 
 
