@@ -1,12 +1,8 @@
-/* =========================================
-   Yiang V2.0
-   Main JavaScript
-========================================= */
+/* =====================================
+   Yiang V2.1 Final JavaScript
+   Creative Intelligence Studio
+===================================== */
 
-
-/* =========================================
-   Page Loading
-========================================= */
 
 
 document.addEventListener(
@@ -15,12 +11,10 @@ document.addEventListener(
 
 
 console.log(
-"Yiang V2.0 Website Loaded"
+"Yiang V2.1 Loaded"
 );
 
 
-
-/* 初始化 */
 
 initLanguage();
 
@@ -28,9 +22,7 @@ initMobileMenu();
 
 initScrollAnimation();
 
-initSmoothScroll();
-
-initLazyLoad();
+initHeader();
 
 initVideo();
 
@@ -42,21 +34,89 @@ initVideo();
 
 
 
-/* =========================================
-   Language System
-========================================= */
 
 
-const languageButton =
-document.querySelector(
-"#language-toggle"
+/* =========================
+LANGUAGE SYSTEM
+========================= */
+
+
+let currentLang =
+localStorage.getItem(
+"yiang-lang"
+) || "en";
+
+
+
+
+async function loadLanguage(lang){
+
+
+try{
+
+
+const response =
+await fetch(
+`lang/${lang}.json`
 );
 
 
-let currentLanguage =
-localStorage.getItem(
-"yiang-language"
-) || "en";
+
+const data =
+await response.json();
+
+
+
+document
+.querySelectorAll("[data-key]")
+.forEach(
+element=>{
+
+
+const key =
+element.dataset.key;
+
+
+
+if(data[key]){
+
+
+element.innerHTML =
+data[key];
+
+
+}
+
+
+
+});
+
+
+
+localStorage.setItem(
+"yiang-lang",
+lang
+);
+
+
+
+}
+
+catch(error){
+
+
+console.log(
+"Language loading error:",
+error
+);
+
+
+}
+
+
+
+}
+
 
 
 
@@ -65,37 +125,68 @@ localStorage.getItem(
 function initLanguage(){
 
 
-changeLanguage(
-currentLanguage
+
+const button =
+document.querySelector(
+"#language-toggle"
 );
 
 
 
-if(languageButton){
+loadLanguage(
+currentLang
+);
 
 
-languageButton.addEventListener(
+
+
+
+if(button){
+
+
+button.addEventListener(
 "click",
 ()=>{
 
 
-currentLanguage =
-currentLanguage==="en"
-?
-"zh"
-:
-"en";
+
+if(currentLang==="en"){
 
 
-localStorage.setItem(
-"yiang-language",
-currentLanguage
-);
+currentLang="zh";
+
+
+button.innerHTML="English";
+
+
+}
+
+else if(currentLang==="zh"){
+
+
+currentLang="jp";
+
+
+button.innerHTML="日本語";
+
+
+}
+
+else{
+
+
+currentLang="en";
+
+
+button.innerHTML="中文";
+
+
+}
 
 
 
-changeLanguage(
-currentLanguage
+loadLanguage(
+currentLang
 );
 
 
@@ -103,46 +194,6 @@ currentLanguage
 });
 
 
-}
-
-
-
-}
-
-
-
-
-function changeLanguage(lang){
-
-
-
-const elements =
-document.querySelectorAll(
-"[data-en]"
-);
-
-
-
-elements.forEach(
-element=>{
-
-
-element.innerHTML =
-element.dataset[lang];
-
-
-});
-
-
-
-if(languageButton){
-
-languageButton.innerHTML =
-lang==="en"
-?
-"中文"
-:
-"English";
 
 }
 
@@ -154,19 +205,24 @@ lang==="en"
 
 
 
-/* =========================================
-   Mobile Menu
-========================================= */
+
+
+
+
+/* =========================
+MOBILE MENU
+========================= */
 
 
 function initMobileMenu(){
 
 
 
-const menuButton =
+const menu =
 document.querySelector(
 ".menu-toggle"
 );
+
 
 
 const nav =
@@ -176,29 +232,32 @@ document.querySelector(
 
 
 
-if(!menuButton || !nav)
+
+if(!menu || !nav)
 return;
 
 
 
 
-menuButton.addEventListener(
+
+menu.addEventListener(
 "click",
 ()=>{
 
 
-menuButton.classList.toggle(
+nav.classList.toggle(
 "active"
 );
 
 
-nav.classList.toggle(
-"open"
+menu.classList.toggle(
+"active"
 );
 
 
 
 });
+
 
 
 
@@ -218,11 +277,6 @@ link.addEventListener(
 
 
 nav.classList.remove(
-"open"
-);
-
-
-menuButton.classList.remove(
 "active"
 );
 
@@ -241,9 +295,12 @@ menuButton.classList.remove(
 
 
 
-/* =========================================
-   Scroll Animation
-========================================= */
+
+
+
+/* =========================
+SCROLL ANIMATION
+========================= */
 
 
 function initScrollAnimation(){
@@ -286,199 +343,21 @@ threshold:0.15
 
 
 
-const animatedElements =
-document.querySelectorAll(
-".fade-up,.fade-left,.fade-right"
-);
-
-
-
-animatedElements.forEach(
-item=>{
-
-
-observer.observe(item);
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-/* =========================================
-   Smooth Scroll
-========================================= */
-
-
-function initSmoothScroll(){
-
-
-
 document
 .querySelectorAll(
-'a[href^="#"]'
+".project-card,.about-card,.technology-card,.document-card"
 )
 .forEach(
-anchor=>{
+element=>{
 
 
-anchor.addEventListener(
-"click",
-function(e){
-
-
-
-const target =
-document.querySelector(
-this.getAttribute("href")
+element.classList.add(
+"fade"
 );
-
-
-
-if(target){
-
-
-e.preventDefault();
-
-
-target.scrollIntoView({
-
-behavior:"smooth",
-block:"start"
-
-});
-
-
-}
-
-
-
-});
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-/* =========================================
-   Lazy Loading Images
-========================================= */
-
-
-function initLazyLoad(){
-
-
-
-const images =
-document.querySelectorAll(
-"img[data-src]"
-);
-
-
-
-const observer =
-new IntersectionObserver(
-entries=>{
-
-
-entries.forEach(
-entry=>{
-
-
-if(entry.isIntersecting){
-
-
-const img =
-entry.target;
-
-
-img.src =
-img.dataset.src;
-
-
-img.removeAttribute(
-"data-src"
-);
-
-
-observer.unobserve(
-img
-);
-
-
-}
-
-
-});
-
-
-});
-
-
-
-
-images.forEach(
-img=>{
 
 
 observer.observe(
-img
-);
-
-
-});
-
-
-}
-
-
-
-
-
-
-
-/* =========================================
-   Video Control
-========================================= */
-
-
-function initVideo(){
-
-
-
-const videos =
-document.querySelectorAll(
-"video"
-);
-
-
-
-videos.forEach(
-video=>{
-
-
-video.addEventListener(
-"loadeddata",
-()=>{
-
-
-video.classList.add(
-"loaded"
+element
 );
 
 
@@ -486,35 +365,6 @@ video.classList.add(
 
 
 
-/*
-移动端避免自动播放失败
-*/
-
-video.addEventListener(
-"click",
-()=>{
-
-
-if(video.paused){
-
-video.play();
-
-}
-else{
-
-video.pause();
-
-}
-
-
-});
-
-
-
-});
-
-
-
 }
 
 
@@ -523,19 +373,19 @@ video.pause();
 
 
 
-/* =========================================
-   Header Scroll Effect
-========================================= */
+
+/* =========================
+HEADER EFFECT
+========================= */
 
 
-window.addEventListener(
-"scroll",
-()=>{
+function initHeader(){
+
 
 
 const header =
 document.querySelector(
-"header"
+".header"
 );
 
 
@@ -544,6 +394,12 @@ if(!header)
 return;
 
 
+
+
+
+window.addEventListener(
+"scroll",
+()=>{
 
 
 if(window.scrollY>50){
@@ -572,39 +428,66 @@ header.classList.remove(
 
 
 
+}
 
 
 
 
-/* =========================================
-   Back To Top
-========================================= */
 
 
-const backTop =
+
+
+
+/* =========================
+VIDEO
+========================= */
+
+
+function initVideo(){
+
+
+
+const video =
 document.querySelector(
-".back-top"
+"video"
 );
 
 
 
-if(backTop){
+if(!video)
+return;
 
 
-backTop.onclick =
+
+
+video.addEventListener(
+"loadeddata",
 ()=>{
 
 
-window.scrollTo({
+console.log(
+"Video Loaded"
+);
 
-top:0,
-
-behavior:"smooth"
 
 });
 
 
-};
+
+
+
+video.addEventListener(
+"error",
+()=>{
+
+
+console.log(
+"Video Loading Failed"
+);
+
+
+});
+
 
 
 }
@@ -615,42 +498,96 @@ behavior:"smooth"
 
 
 
-/* =========================================
-   Button Ripple Effect
-========================================= */
+
+
+/* =========================
+SMOOTH SCROLL
+========================= */
 
 
 document
 .querySelectorAll(
-"button,.btn-primary"
+'a[href^="#"]'
 )
 .forEach(
-button=>{
+link=>{
 
 
-button.addEventListener(
+link.addEventListener(
 "click",
-function(){
+function(e){
 
 
-this.classList.add(
-"clicked"
+
+const target =
+document.querySelector(
+this.getAttribute(
+"href"
+)
 );
 
 
 
-setTimeout(
+if(target){
+
+
+e.preventDefault();
+
+
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
+
+/* =========================
+IMAGE CHECK
+========================= */
+
+
+window.addEventListener(
+"load",
 ()=>{
 
 
-this.classList.remove(
-"clicked"
+document
+.querySelectorAll(
+"img"
+)
+.forEach(
+img=>{
+
+
+if(!img.complete ||
+img.naturalWidth===0){
+
+
+console.log(
+"Image missing:",
+img.src
 );
 
 
-},
-300
-);
+}
 
 
 
@@ -658,28 +595,3 @@ this.classList.remove(
 
 
 });
-
-
-
-
-
-
-/* =========================================
-   Console Branding
-========================================= */
-
-
-console.log(
-"%c Yiang V2.0 ",
-`
-background:#111;
-color:white;
-font-size:20px;
-padding:10px;
-`
-);
-
-
-console.log(
-"Creative Intelligence Studio"
-);
