@@ -1,597 +1,100 @@
-/* =====================================
-   Yiang V2.1 Final JavaScript
-   Creative Intelligence Studio
-===================================== */
+/* Yiang V4.0 — Future Innovation Studio */
 
-
-
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
-
-
-console.log(
-"Yiang V2.1 Loaded"
-);
-
-
-
-initLanguage();
-
-initMobileMenu();
-
-initScrollAnimation();
-
-initHeader();
-
-initVideo();
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
+  initLanguage();
+  initMobileMenu();
+  initHeaderScroll();
+  initSmoothScroll();
+  initScrollReveal();
 });
 
+/* Language */
+let currentLang = localStorage.getItem("yiang-lang") || "en";
 
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("yiang-lang", lang);
 
+  document.querySelectorAll("[data-en]").forEach(function (el) {
+    const text = el.getAttribute("data-" + lang);
+    if (text != null && text !== "") {
+      el.textContent = text.trim();
+    }
+  });
 
-
-
-
-/* =========================
-LANGUAGE SYSTEM
-========================= */
-
-
-let currentLang =
-localStorage.getItem(
-"yiang-lang"
-) || "en";
-
-
-
-
-async function loadLanguage(lang){
-
-
-try{
-
-
-const response =
-await fetch(
-`lang/${lang}.json`
-);
-
-
-
-const data =
-await response.json();
-
-
-
-document
-.querySelectorAll("[data-key]")
-.forEach(
-element=>{
-
-
-const key =
-element.dataset.key;
-
-
-
-if(data[key]){
-
-
-element.innerHTML =
-data[key];
-
-
+  const btn = document.getElementById("language-toggle");
+  if (btn) btn.textContent = lang === "en" ? "中文" : "English";
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
 }
 
-
-
-});
-
-
-
-localStorage.setItem(
-"yiang-lang",
-lang
-);
-
-
-
+function initLanguage() {
+  applyLanguage(currentLang);
+  const button = document.getElementById("language-toggle");
+  if (button) {
+    button.addEventListener("click", function () {
+      applyLanguage(currentLang === "en" ? "zh" : "en");
+    });
+  }
 }
 
-catch(error){
+/* Mobile menu */
+function initMobileMenu() {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("main-nav");
+  if (!toggle || !nav) return;
 
+  toggle.addEventListener("click", function () {
+    nav.classList.toggle("open");
+    toggle.textContent = nav.classList.contains("open") ? "✕" : "☰";
+    document.body.style.overflow = nav.classList.contains("open") ? "hidden" : "";
+  });
 
-console.log(
-"Language loading error:",
-error
-);
-
-
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("open");
+      toggle.textContent = "☰";
+      document.body.style.overflow = "";
+    });
+  });
 }
 
-
-
+/* Header scroll */
+function initHeaderScroll() {
+  const header = document.querySelector(".header");
+  if (!header) return;
+  function update() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  update();
 }
 
-
-
-
-
-
-function initLanguage(){
-
-
-
-const button =
-document.querySelector(
-"#language-toggle"
-);
-
-
-
-loadLanguage(
-currentLang
-);
-
-
-
-
-
-if(button){
-
-
-button.addEventListener(
-"click",
-()=>{
-
-
-
-if(currentLang==="en"){
-
-
-currentLang="zh";
-
-
-button.innerHTML="English";
-
-
+/* Smooth scroll */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (!href || href === "#") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 72;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      }
+    });
+  });
 }
 
-else if(currentLang==="zh"){
-
-
-currentLang="jp";
-
-
-button.innerHTML="日本語";
-
-
+/* Scroll reveal */
+function initScrollReveal() {
+  const items = document.querySelectorAll(".reveal");
+  if (!items.length) return;
+  function check() {
+    const trigger = window.innerHeight * 0.88;
+    items.forEach(function (el) {
+      if (el.getBoundingClientRect().top < trigger) el.classList.add("visible");
+    });
+  }
+  window.addEventListener("scroll", check, { passive: true });
+  setTimeout(check, 100);
 }
-
-else{
-
-
-currentLang="en";
-
-
-button.innerHTML="中文";
-
-
-}
-
-
-
-loadLanguage(
-currentLang
-);
-
-
-
-});
-
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-MOBILE MENU
-========================= */
-
-
-function initMobileMenu(){
-
-
-
-const menu =
-document.querySelector(
-".menu-toggle"
-);
-
-
-
-const nav =
-document.querySelector(
-".nav-menu"
-);
-
-
-
-
-if(!menu || !nav)
-return;
-
-
-
-
-
-menu.addEventListener(
-"click",
-()=>{
-
-
-nav.classList.toggle(
-"active"
-);
-
-
-menu.classList.toggle(
-"active"
-);
-
-
-
-});
-
-
-
-
-
-
-document
-.querySelectorAll(
-".nav-menu a"
-)
-.forEach(
-link=>{
-
-
-link.addEventListener(
-"click",
-()=>{
-
-
-nav.classList.remove(
-"active"
-);
-
-
-});
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-SCROLL ANIMATION
-========================= */
-
-
-function initScrollAnimation(){
-
-
-
-const observer =
-new IntersectionObserver(
-entries=>{
-
-
-entries.forEach(
-entry=>{
-
-
-if(entry.isIntersecting){
-
-
-entry.target.classList.add(
-"show"
-);
-
-
-}
-
-
-});
-
-
-},
-{
-
-threshold:0.15
-
-}
-
-);
-
-
-
-
-
-document
-.querySelectorAll(
-".project-card,.about-card,.technology-card,.document-card"
-)
-.forEach(
-element=>{
-
-
-element.classList.add(
-"fade"
-);
-
-
-observer.observe(
-element
-);
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-HEADER EFFECT
-========================= */
-
-
-function initHeader(){
-
-
-
-const header =
-document.querySelector(
-".header"
-);
-
-
-
-if(!header)
-return;
-
-
-
-
-
-window.addEventListener(
-"scroll",
-()=>{
-
-
-if(window.scrollY>50){
-
-
-header.classList.add(
-"scrolled"
-);
-
-
-}
-
-else{
-
-
-header.classList.remove(
-"scrolled"
-);
-
-
-}
-
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-VIDEO
-========================= */
-
-
-function initVideo(){
-
-
-
-const video =
-document.querySelector(
-"video"
-);
-
-
-
-if(!video)
-return;
-
-
-
-
-video.addEventListener(
-"loadeddata",
-()=>{
-
-
-console.log(
-"Video Loaded"
-);
-
-
-});
-
-
-
-
-
-video.addEventListener(
-"error",
-()=>{
-
-
-console.log(
-"Video Loading Failed"
-);
-
-
-});
-
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-SMOOTH SCROLL
-========================= */
-
-
-document
-.querySelectorAll(
-'a[href^="#"]'
-)
-.forEach(
-link=>{
-
-
-link.addEventListener(
-"click",
-function(e){
-
-
-
-const target =
-document.querySelector(
-this.getAttribute(
-"href"
-)
-);
-
-
-
-if(target){
-
-
-e.preventDefault();
-
-
-
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-}
-
-
-
-});
-
-
-
-});
-
-
-
-
-
-
-
-
-/* =========================
-IMAGE CHECK
-========================= */
-
-
-window.addEventListener(
-"load",
-()=>{
-
-
-document
-.querySelectorAll(
-"img"
-)
-.forEach(
-img=>{
-
-
-if(!img.complete ||
-img.naturalWidth===0){
-
-
-console.log(
-"Image missing:",
-img.src
-);
-
-
-}
-
-
-
-});
-
-
-});
