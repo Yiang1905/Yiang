@@ -1,0 +1,16 @@
+﻿# Independent projects
+NeuroSleep-Technology/
+health/
+
+# Local AI WorkStation
+AI WorkStation/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local environment / temporary files
+.env
+.venv/
+venv/
+*.log
