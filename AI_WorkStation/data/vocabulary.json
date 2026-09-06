@@ -1,0 +1,32 @@
+[
+    {
+        "word":"negotiate",
+        "type":"verb",
+        "meaning":"谈判",
+        "example":"We need to negotiate with the supplier."
+    },
+    {
+        "word":"supplier",
+        "type":"noun",
+        "meaning":"供应商",
+        "example":"The supplier delivered the materials on time."
+    },
+    {
+        "word":"deadline",
+        "type":"noun",
+        "meaning":"截止日期",
+        "example":"We must finish the project before the deadline."
+    },
+    {
+        "word":"revenue",
+        "type":"noun",
+        "meaning":"收入",
+        "example":"The company increased its revenue."
+    },
+    {
+        "word":"productivity",
+        "type":"noun",
+        "meaning":"生产效率",
+        "example":"Managers should improve productivity."
+    }
+]

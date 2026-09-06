@@ -1,0 +1,8 @@
+{
+    "project_name": "AI WorkStation",
+    "version": "V2.1",
+    "author": "User",
+    "language": "Chinese",
+    "auto_run": true,
+    "interval_minutes": 30
+}
