@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Wellness Destinations — places and experiences that support recovery, nature, sleep and healthy travel. Sample data.">
+  <meta name="theme-color" content="#1a7a72">
+  <title>Wellness Destinations — Yiang Health</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">YIANG <span>HEALTH</span></a>
+      <button class="nav-toggle" aria-label="Menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="planner.html" data-i18n="nav_planner">Planner</a></li>
+        <li><a href="dashboard.html" data-i18n="nav_dashboard">My Plan</a></li>
+        <li><a href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
+        <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
+      </ul>
+      <div class="header-actions">
+        <select id="lang-select" aria-label="Language"></select>
+        <a href="planner.html" class="btn btn-primary" data-i18n="nav_start">Start Planning</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <h1 class="section-title" data-i18n="nav_destinations">Pilot Cities</h1>
+    <p class="section-sub">18 regions under China's TCM service consumption &amp; service-trade pilot program. Preview is free; full hospital orientation, climate, food, hotels and transport unlock after a small planning fee.</p>
+    <div class="form-group" style="max-width:420px;margin-bottom:20px">
+      <label for="home-city">Optional: your city (for rough distance)</label>
+      <input type="text" id="home-city" placeholder="e.g. Tokyo, Berlin, Singapore, New York">
+      <button type="button" class="btn btn-secondary" id="btn-save-home" style="margin-top:8px">Save for distance estimate</button>
+      <p class="form-hint">We only store a rough lat/lon on this device when possible.</p>
+    </div>
+    <div class="city-grid" id="destinations-grid"></div>
+    <p class="mt-24" style="font-size:0.85rem;color:var(--text-muted)">
+      Policy list (public): Beijing, Tianjin, Hulunbuir, Yanbian, Heihe, Shanghai, Nantong, Zhejiang, Shandong, Guangdong, Guangxi, Hainan, Chongqing, Chengdu, Kunming, Shaanxi, Gansu, Urumqi.
+      All hospital notes are DEMO / public orientation — not partnerships or medical advice.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="safety.html" data-i18n="footer_safety">Safety</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms</a>
+      </div>
+      <p class="footer-disclaimer" data-i18n="footer_disclaimer">Yiang Health provides information organization and journey planning services only. Not medical advice. Not emergency service.</p>
+      <p class="footer-copy">© 2026 YIANG HEALTH</p>
+    </div>
+  </footer>
+
+  <script src="modules/config.js"></script>
+  <script src="modules/data.js"></script>
+  <script src="modules/safety.js"></script>
+  <script src="modules/i18n.js"></script>
+  <script src="modules/wellness.js"></script>
+  <script src="modules/access.js"></script>
+  <script src="modules/destinations.js"></script>
+  <script src="modules/planner.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

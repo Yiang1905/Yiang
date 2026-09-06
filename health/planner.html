@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Plan your China TCM, wellness and culture journey with Yiang Health. Non-diagnostic information organization for global visitors.">
+  <meta name="theme-color" content="#1a7a72">
+  <meta property="og:title" content="China Journey Planner — Yiang Health">
+  <meta property="og:description" content="Personalized wellness guidance for global users. Build better habits with clear daily actions.">
+  <title>China Journey Planner — Yiang Health</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">YIANG <span>HEALTH</span></a>
+      <button class="nav-toggle" aria-label="Menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="planner.html" data-i18n="nav_planner">Planner</a></li>
+        <li><a href="dashboard.html" data-i18n="nav_dashboard">My Plan</a></li>
+        <li><a href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
+        <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
+      </ul>
+      <div class="header-actions">
+        <select id="lang-select" aria-label="Language"></select>
+        <a href="planner.html" class="btn btn-primary" data-i18n="nav_start">Start Your Plan</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="planner-wrap">
+      <h1 class="section-title" data-i18n="planner_title">China Journey Planner</h1>
+      <p class="section-sub" data-i18n="corePosition">We don't diagnose. We help you build better wellness habits.</p>
+
+      <div class="steps-indicator" id="steps-indicator">
+        <div class="step-dot active" data-step="1"></div>
+        <div class="step-dot" data-step="2"></div>
+        <div class="step-dot" data-step="3"></div>
+        <div class="step-dot" data-step="4"></div>
+      </div>
+
+      <div id="planner-form-wrap">
+        <!-- Step 1: Purpose -->
+        <div class="planner-step planner-card" data-step="1">
+          <h2 data-i18n="planner_step1">Your Purpose</h2>
+          <p class="form-hint mb-16" data-i18n="label_purpose">What best describes your interest in a China journey?</p>
+          <div class="goal-grid" id="goal-grid" role="radiogroup" aria-label="Journey purposes">
+            <!-- filled by JS -->
+          </div>
+          <div class="planner-actions">
+            <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: About you -->
+        <div class="planner-step planner-card hidden" data-step="2">
+          <h2 data-i18n="planner_step2">About You</h2>
+          <div class="form-group">
+            <label for="input-age" data-i18n="label_age">Age Range</label>
+            <select id="input-age">
+              <option value="" data-i18n="select_placeholder">Please select</option>
+              <option value="18-30" data-i18n="age_18_30">18–30</option>
+              <option value="31-45" data-i18n="age_31_45">31–45</option>
+              <option value="46-60" data-i18n="age_46_60">46–60</option>
+              <option value="60+" data-i18n="age_60plus">60+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="input-location" data-i18n="label_country">Country / Region</label>
+            <input type="text" id="input-location" placeholder="e.g. United States, Germany, Japan…" autocomplete="country-name">
+          </div>
+          <div class="form-group">
+            <label for="input-activity" data-i18n="label_activity">Activity Level</label>
+            <select id="input-activity">
+              <option value="" data-i18n="select_placeholder">Please select</option>
+              <option value="sedentary" data-i18n="activity_sedentary">Mostly sedentary</option>
+              <option value="light" data-i18n="activity_light">Light activity</option>
+              <option value="moderate" data-i18n="activity_moderate">Moderately active</option>
+              <option value="active" data-i18n="activity_active">Very active</option>
+            </select>
+          </div>
+          <div class="planner-actions">
+            <button type="button" class="btn btn-secondary" data-action="back" data-i18n="btn_back">Back</button>
+            <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Lifestyle -->
+        <div class="planner-step planner-card hidden" data-step="3">
+          <h2 data-i18n="planner_step3">Lifestyle</h2>
+          <div class="form-group">
+            <label for="input-sleep" data-i18n="label_sleep">Typical Sleep Pattern</label>
+            <select id="input-sleep">
+              <option value="" data-i18n="select_placeholder">Please select</option>
+              <option value="short" data-i18n="sleep_short">Often under 6 hours</option>
+              <option value="ok" data-i18n="sleep_ok">Usually 6–7 hours</option>
+              <option value="good" data-i18n="sleep_good">Usually 7–9 hours</option>
+              <option value="irregular" data-i18n="sleep_irregular">Irregular schedule</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="input-diet" data-i18n="label_diet">Diet Preference</label>
+            <select id="input-diet">
+              <option value="" data-i18n="select_placeholder">Please select</option>
+              <option value="omnivore" data-i18n="diet_omnivore">Omnivore</option>
+              <option value="vegetarian" data-i18n="diet_vegetarian">Vegetarian</option>
+              <option value="vegan" data-i18n="diet_vegan">Vegan</option>
+              <option value="other" data-i18n="diet_other">Other / Flexible</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="input-time" data-i18n="label_time">Daily Time for Wellness</label>
+            <select id="input-time">
+              <option value="" data-i18n="select_placeholder">Please select</option>
+              <option value="15" data-i18n="time_15">About 15 minutes</option>
+              <option value="30" data-i18n="time_30">About 30 minutes</option>
+              <option value="60" data-i18n="time_60">About 60 minutes</option>
+              <option value="90" data-i18n="time_90">90+ minutes</option>
+            </select>
+          </div>
+          <div class="planner-actions">
+            <button type="button" class="btn btn-secondary" data-action="back" data-i18n="btn_back">Back</button>
+            <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Preferences -->
+        <div class="planner-step planner-card hidden" data-step="4">
+          <h2 data-i18n="planner_step4">Preferences</h2>
+          <div class="form-group">
+            <label for="input-lifestyle" data-i18n="label_lifestyle">Work / Lifestyle Pattern</label>
+            <select id="input-lifestyle">
+              <option value="" data-i18n="select_placeholder">Please select</option>
+              <option value="office" data-i18n="lifestyle_office">Office / desk-based</option>
+              <option value="shift" data-i18n="lifestyle_shift">Shift work</option>
+              <option value="active_job" data-i18n="lifestyle_active_job">Physically active job</option>
+              <option value="remote" data-i18n="lifestyle_remote">Remote / flexible</option>
+              <option value="student" data-i18n="lifestyle_student">Student</option>
+              <option value="other" data-i18n="lifestyle_other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="input-notes" data-i18n="label_concern">Anything else you would like the plan to consider? (optional)</label>
+            <textarea id="input-notes" rows="3" maxlength="400" data-i18n="label_concern"></textarea>
+            <p class="form-hint" data-i18n="concern_hint">Do NOT enter medical records, diagnoses, medications, passport numbers, ID numbers, bank details or passwords.</p>
+          </div>
+          <div class="planner-actions">
+            <button type="button" class="btn btn-secondary" data-action="back" data-i18n="btn_back">Back</button>
+            <button type="button" class="btn btn-primary" data-action="generate" data-i18n="btn_generate">Generate My Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div id="planner-loading" class="planner-card hidden" aria-live="polite">
+        <p class="loading-text" data-i18n="loading">Preparing your plan…</p>
+      </div>
+
+      <!-- Emergency block -->
+      <div id="emergency-block" class="planner-card emergency-card hidden" role="alert">
+        <h2 data-i18n="emergency_title">This is not an emergency medical service</h2>
+        <p data-i18n="emergency_body">If you may be experiencing a medical emergency, contact local emergency services or seek immediate medical attention. Do not rely on this website for emergency care.</p>
+        <a href="index.html" class="btn btn-primary" data-i18n="emergency_btn">Return to Home</a>
+      </div>
+
+      <!-- Results -->
+      <div id="planner-results" class="hidden">
+        <div class="planner-card result-card">
+          <h2 data-i18n="result_title">Your China Journey Framework</h2>
+          <p class="result-meta"><span data-i18n="result_id">Plan ID</span>: <strong id="result-plan-id"></strong></p>
+          <p class="storage-notice" data-i18n="storage_notice">Your plan and progress are stored only on this device (localStorage).</p>
+
+          <div class="plan-goal-badge" id="result-goal-badge"></div>
+
+          <h3 data-i18n="plan_today">Suggested Focus</h3>
+          <div id="result-actions" class="action-list"></div>
+
+          <div class="result-actions-bar">
+            <a href="dashboard.html" class="btn btn-primary" data-i18n="btn_myplan">My Plan</a>
+            <button type="button" class="btn btn-secondary" id="btn-restart" data-i18n="btn_restart">Create New Plan</button>
+          </div>
+
+          <div class="disclaimer-box">
+            <p data-i18n="footer_disclaimer">Yiang Health provides wellness guidance and lifestyle information only. Not medical advice. Not a diagnostic or emergency service. Seek professional care when needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="safety.html" data-i18n="footer_safety">Safety</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms</a>
+        <a href="pricing.html" data-i18n="nav_pricing">Pricing</a>
+      </div>
+      <p class="footer-disclaimer" data-i18n="footer_disclaimer">Yiang Health provides wellness guidance and lifestyle information only. Not medical advice. Not a diagnostic or emergency service.</p>
+      <p class="footer-copy">© 2026 YIANG HEALTH. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="modules/config.js"></script>
+  <script src="modules/data.js"></script>
+  <script src="modules/safety.js"></script>
+  <script src="modules/i18n.js"></script>
+  <script src="modules/wellness.js"></script>
+  <script src="modules/destinations.js"></script>
+  <script src="modules/planner.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
