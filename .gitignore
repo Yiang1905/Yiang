@@ -1,5 +1,7 @@
 ﻿# Independent projects
 NeuroSleep-Technology/
+NeuroSleep-Technology_BACKUP/
+NeuroSleep-Site-with-Film/
 health/
 
 # Local AI WorkStation
@@ -14,3 +16,4 @@ __pycache__/
 .venv/
 venv/
 *.log
+_audit_links.py
