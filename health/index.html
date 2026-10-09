@@ -3,94 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Yiang Health — Plan your China TCM, wellness and culture journey. Warm guidance for global visitors to pilot regions. Not medical advice.">
-  <meta name="keywords" content="wellness, health, lifestyle, sleep, stress management, fitness, nutrition, recovery, personalized wellness, global health">
-  <meta name="theme-color" content="#1a7a72">
+  <meta name="description" content="Explore China's TCM culture, wellness traditions and local experiences with a thoughtful, multilingual journey planner from Yiang Health.">
+  <meta name="theme-color" content="#173e35">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Yiang Health — China TCM · Wellness · Culture">
-  <meta property="og:description" content="A warm guide for international visitors exploring TCM, wellness, food, nature and culture across China pilot regions.">
+  <meta property="og:title" content="Yiang Health — A more thoughtful way to explore China">
+  <meta property="og:description" content="Explore TCM culture, wellness traditions, nature and local life. Plan at your own pace with clear information and safety boundaries.">
   <meta property="og:site_name" content="Yiang Health">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yiang Health — China TCM · Wellness · Culture">
-  <meta name="twitter:description" content="Personalized wellness plans for sleep, stress, fitness, nutrition and recovery.">
-  <title>Yiang Health — China TCM, Wellness & Culture for Global Visitors</title>
-  <link rel="manifest" href="manifest.json">
+  <meta name="twitter:title" content="Yiang Health — Explore China, thoughtfully">
+  <meta name="twitter:description" content="A multilingual starting point for TCM culture, wellness and local experiences in China.">
+  <title>Yiang Health — Explore China, Thoughtfully</title>
   <link rel="canonical" href="https://yiang1905.github.io/Yiang-Health/">
-  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-redesign">
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">YIANG <span>HEALTH</span></a>
-      <button class="nav-toggle" aria-label="Menu" type="button">
+      <a href="index.html" class="logo" aria-label="Yiang Health home">YIANG <span>HEALTH</span></a>
+      <button class="nav-toggle" aria-label="Menu" type="button" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
         <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="planner.html" data-i18n="nav_planner">Planner</a></li>
-        <li><a href="dashboard.html" data-i18n="nav_dashboard">My Plan</a></li>
-        <li><a href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
+        <li><a href="planner.html" data-i18n="nav_planner">Plan Journey</a></li>
+        <li><a href="dashboard.html" data-i18n="nav_dashboard">My Journey</a></li>
+        <li><a href="destinations.html" data-i18n="nav_destinations">Pilot Cities</a></li>
         <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
         <li><a href="safety.html" data-i18n="nav_safety">Safety</a></li>
       </ul>
       <div class="header-actions">
         <select id="lang-select" aria-label="Language"></select>
-        <a href="planner.html" class="btn btn-primary" data-i18n="nav_start">Start Your Plan</a>
+        <a href="planner.html" class="btn btn-primary" data-i18n="nav_start">Start Planning</a>
       </div>
     </div>
   </header>
 
-  <main class="main">
-    <section class="hero">
-      <div class="hero-badge" data-i18n="tagline">China TCM · Wellness · Culture — For Global Visitors</div>
-      <h1 data-i18n="hero_title">Come to China. Experience TCM. Feel the Culture.</h1>
-      <p class="hero-sub" data-i18n="hero_subtitle">A warm guide for international visitors exploring Traditional Chinese Medicine, wellness, food, nature and local life — across China's pilot regions for TCM service trade.</p>
-      <div class="hero-cta">
-        <a href="planner.html" class="btn btn-primary btn-lg" data-i18n="btn_start">Plan My China Journey</a>
-        <a href="destinations.html" class="btn btn-secondary btn-lg" data-i18n="btn_explore">Explore Pilot Cities</a>
+  <main>
+    <section class="home-hero">
+      <div class="home-hero-inner">
+        <div class="home-hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="home_eyebrow">A thoughtful guide to China</span></div>
+          <h1 data-i18n="hero_title">Come to China. Experience TCM. Feel the Culture.</h1>
+          <p class="home-hero-sub" data-i18n="hero_subtitle">A warm guide for international visitors exploring Traditional Chinese Medicine, wellness, food, nature and local life.</p>
+          <div class="home-hero-cta">
+            <a href="planner.html" class="btn btn-primary btn-lg" data-i18n="btn_start">Plan My China Journey</a>
+            <a href="destinations.html" class="btn btn-secondary btn-lg" data-i18n="btn_explore">Explore Pilot Cities</a>
+          </div>
+          <div class="home-hero-note"><span class="note-mark">✓</span><span data-i18n="home_hero_note">Clear information. Your pace. No medical claims.</span></div>
+        </div>
+        <div class="home-hero-visual">
+          <img src="image/hero-wellness.webp" alt="A calm, nature-inspired wellness scene in China" fetchpriority="high">
+          <div class="visual-caption">
+            <span class="caption-kicker" data-i18n="home_visual_kicker">YOUR JOURNEY, YOUR WAY</span>
+            <span class="caption-title" data-i18n="home_visual_title">Culture, nature & mindful discovery</span>
+          </div>
+          <div class="floating-note"><span class="floating-note-icon">✦</span><span data-i18n="home_float_note">Start with what matters to you</span></div>
+        </div>
       </div>
-      <div class="core-position">
-        <p data-i18n="corePosition">We don't diagnose. We help you plan a warmer journey into China's TCM, wellness and culture.</p>
+      <div class="hero-bottom-line" aria-hidden="true"></div>
+    </section>
+
+    <section class="home-proof-strip" aria-label="Yiang Health approach">
+      <div class="proof-item"><span class="proof-number">17</span><span data-i18n="home_proof_languages">interface languages</span></div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><span class="proof-number">18</span><span data-i18n="home_proof_regions">pilot regions to explore</span></div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><span class="proof-number">01</span><span data-i18n="home_proof_rule">simple rule: your journey, your choice</span></div>
+    </section>
+
+    <section class="home-section home-how">
+      <div class="section-heading">
+        <span class="section-kicker" data-i18n="home_how_kicker">A CLEARER WAY TO BEGIN</span>
+        <h2 data-i18n="home_how_title">From a first idea to a journey outline.</h2>
+        <p data-i18n="home_how_sub">No complicated research required to get started. Explore first, then shape a plan around your own interests.</p>
+      </div>
+      <div class="home-steps">
+        <article class="home-step">
+          <span class="step-index">01</span>
+          <div class="step-icon" aria-hidden="true">⌕</div>
+          <h3 data-i18n="home_step1_title">Discover</h3>
+          <p data-i18n="home_step1_desc">Browse pilot regions and get a feel for local culture, landscapes and wellness traditions.</p>
+          <a href="destinations.html" class="text-link" data-i18n="home_step1_link">Explore destinations <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="home-step">
+          <span class="step-index">02</span>
+          <div class="step-icon" aria-hidden="true">✳</div>
+          <h3 data-i18n="home_step2_title">Personalize</h3>
+          <p data-i18n="home_step2_desc">Share your interests, pace and practical preferences to create a simple starting framework.</p>
+          <a href="planner.html" class="text-link" data-i18n="home_step2_link">Build your outline <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="home-step">
+          <span class="step-index">03</span>
+          <div class="step-icon" aria-hidden="true">↗</div>
+          <h3 data-i18n="home_step3_title">Prepare</h3>
+          <p data-i18n="home_step3_desc">Use the outline to identify what to confirm with official providers before making arrangements.</p>
+          <a href="safety.html" class="text-link" data-i18n="home_step3_link">Know the boundaries <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
     </section>
 
-    <section class="values">
-      <div class="value-card">
-        <div class="value-icon">🌿</div>
-        <h3 data-i18n="value_ai_title">Personalized Journey Planner</h3>
-        <p data-i18n="value_ai_desc">Share your purpose and preferences. Receive a clear, non-diagnostic journey framework for TCM, wellness and culture.</p>
+    <section class="home-feature-band">
+      <div class="feature-image-wrap">
+        <img src="image/hero-wellness.webp" alt="" loading="lazy">
+        <div class="feature-image-label" data-i18n="home_feature_image_label">SLOW DOWN. LOOK CLOSER.</div>
       </div>
-      <div class="value-card">
-        <div class="value-icon">🏮</div>
-        <h3 data-i18n="value_match_title">Pilot Cities & Experiences</h3>
-        <p data-i18n="value_match_desc">Orient yourself among pilot regions known for TCM services, wellness and cultural exchange.</p>
+      <div class="feature-copy">
+        <span class="section-kicker" data-i18n="home_feature_kicker">MORE THAN A CHECKLIST</span>
+        <h2 data-i18n="home_feature_title">The best journeys leave room for discovery.</h2>
+        <p data-i18n="home_feature_desc">From tea and regional food to gardens, mountains and everyday local life, explore the cultural context around China's wellness traditions — at a pace that feels right for you.</p>
+        <ul class="feature-list">
+          <li><span>✓</span><span data-i18n="home_feature_bullet1">Culture and local experiences alongside practical planning</span></li>
+          <li><span>✓</span><span data-i18n="home_feature_bullet2">Public information pathways to help you ask better questions</span></li>
+          <li><span>✓</span><span data-i18n="home_feature_bullet3">A clear distinction between travel information and medical care</span></li>
+        </ul>
+        <a href="destinations.html" class="btn btn-primary" data-i18n="btn_explore">Explore Pilot Cities</a>
       </div>
-      <div class="value-card">
-        <div class="value-icon">🍵</div>
-        <h3 data-i18n="value_nav_title">Culture Beyond the Clinic</h3>
-        <p data-i18n="value_nav_desc">Food, landscapes, transport tips and local rhythm — so your trip feels human.</p>
+    </section>
+
+    <section class="home-safety">
+      <div class="safety-symbol" aria-hidden="true">✳</div>
+      <div class="safety-copy">
+        <span class="section-kicker" data-i18n="home_safety_kicker">A PROMISE OF CLARITY</span>
+        <h2 data-i18n="home_safety_title">Helpful planning. Honest boundaries.</h2>
+        <p data-i18n="home_safety_desc">Yiang Health helps organize information and travel ideas. It does not diagnose, recommend treatment, arrange clinical referrals or replace advice from qualified professionals.</p>
+        <a href="safety.html" class="text-link" data-i18n="home_safety_link">Read our safety approach <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="value-card">
-        <div class="value-icon">🌍</div>
-        <h3 data-i18n="value_lang_title">Built for Global Friends</h3>
-        <p data-i18n="value_lang_desc">Multilingual experience with RTL support and localStorage privacy by design.</p>
+      <div class="safety-side-note"><span data-i18n="home_safety_side">Your health decisions belong with you and qualified professionals.</span></div>
+    </section>
+
+    <section class="home-final-cta">
+      <span class="section-kicker" data-i18n="home_final_kicker">YOUR NEXT CHAPTER STARTS HERE</span>
+      <h2 data-i18n="home_final_title">Curious about China? Start with a simple plan.</h2>
+      <p data-i18n="home_final_desc">Take a first look, explore at your own pace, and decide what you want to learn more about.</p>
+      <div class="home-hero-cta">
+        <a href="planner.html" class="btn btn-light btn-lg" data-i18n="btn_start">Plan My China Journey</a>
+        <a href="pricing.html" class="btn btn-outline-light btn-lg" data-i18n="home_view_pricing">View transparent pricing</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer home-footer">
     <div class="footer-inner">
+      <div class="home-footer-top">
+        <a href="index.html" class="logo">YIANG <span>HEALTH</span></a>
+        <p data-i18n="home_footer_mission">A thoughtful starting point for exploring China's wellness culture and local life.</p>
+      </div>
       <div class="footer-links">
+        <a href="planner.html" data-i18n="nav_planner">Plan Journey</a>
+        <a href="destinations.html" data-i18n="nav_destinations">Pilot Cities</a>
+        <a href="pricing.html" data-i18n="nav_pricing">Pricing</a>
         <a href="safety.html" data-i18n="footer_safety">Safety</a>
         <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
         <a href="terms.html" data-i18n="footer_terms">Terms</a>
-        <a href="pricing.html" data-i18n="nav_pricing">Pricing</a>
       </div>
-      <p class="footer-disclaimer" data-i18n="footer_disclaimer">Yiang Health provides wellness guidance and lifestyle information only. Not medical advice. Not a diagnostic or emergency service. Seek professional care when needed.</p>
-      <p class="footer-copy">© 2026 YIANG HEALTH. All rights reserved.</p>
+      <p class="footer-disclaimer" data-i18n="footer_disclaimer">Yiang Health organizes information and journey planning only. Not medical advice, diagnosis, treatment or emergency care. Always consult qualified professionals and official sources.</p>
+      <p class="footer-copy">© 2026 YIANG HEALTH. <span data-i18n="home_footer_rights">Made for curious minds, with care.</span></p>
     </div>
   </footer>
 
@@ -103,9 +174,7 @@
   <script src="modules/planner.js"></script>
   <script src="script.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').catch(() => {});
-    }
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js').catch(() => {});
   </script>
 </body>
 </html>
