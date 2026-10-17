@@ -1,8 +1,8 @@
-﻿const CACHE = 'yiang-health-v1.4';
+﻿const CACHE = 'yiang-health-v1.6-jincheng-redirect';
 const ASSETS = [
   './','./index.html','./planner.html','./dashboard.html','./destinations.html',
-  './city.html','./pricing.html','./safety.html','./terms.html','./privacy.html',
-  './style.css','./script.js','./manifest.json','./image/hero-wellness.webp',
+  './city.html','./shanxi.html','./jincheng.html','./pricing.html','./safety.html','./terms.html','./privacy.html',
+  './style.css','./shanxi.css','./script.js','./manifest.json','./image/hero-wellness.webp',
   './modules/config.js','./modules/data.js','./modules/safety.js','./modules/i18n.js',
   './modules/wellness.js','./modules/access.js','./modules/destinations.js','./modules/planner.js',
   './data/pilots.json','./data/cities.json','./data/services.json'
@@ -26,4 +26,3 @@ self.addEventListener('fetch', e => {
     return cached || fetched;
   }));
 });
-
