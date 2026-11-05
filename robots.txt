@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yiang1905.github.io/Yiang/sitemap.xml
